@@ -1,6 +1,13 @@
 /*
 * NORMALIZER
 */
+html{
+	background: url(../img/war.jpg) no-repeat;
+    background-size: cover;
+}
+body{
+	background: rgba(255,255,255,0.4) !important;
+}
 html, body{
 	margin: 0;
 	padding: 0;
@@ -20,4 +27,12 @@ textarea{
 }
 .h1,.h2,.h3,.h4,.h5,.h6{
 	margin: 6px 12px;
+}
+#link_personagem{
+	background: url(../img/warrior_pixel.png) no-repeat;
+	background-size: 40px;
+	height: 40px;
+	background-position: 0px 0;
+	padding: 10px;
+	text-align: center;
 }

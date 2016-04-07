@@ -11,8 +11,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h4 class="panel-title">
-                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                            	<span class="fa fa-user"></span> Personagem</a>
+						<div id="link_personagem" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapsed" aria-expanded="false">
+							<a style="cursor: pointer;">Personagem</a>
+						</div>
                         </h4>
                     </div>
                     <div id="collapseOne" class="panel-collapse collapse">
