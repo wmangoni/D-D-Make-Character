@@ -12,6 +12,7 @@ class Classes extends CI_Controller {
 
 	public function index()
 	{
+        //$this->output->enable_profiler(TRUE);
 		$data['classes'] = $this->model_classes->get_last_classes();
 		$data['sub_title'] = 'Lista de Classes D&D 3.5';
 		$data['description'] = 'Aqui você encontra todas as classes disponíveis para seu personagem!';
