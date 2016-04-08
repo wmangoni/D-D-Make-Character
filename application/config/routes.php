@@ -5,11 +5,12 @@ $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['home'] = 'home';
-$route['posts'] = 'home/posts';
-$route['lista'] = 'home/lista';
 $route['classes'] = 'classes';
 $route['classes/create'] = 'classes/create';
 $route['classes/update'] = 'classes/update';
+$route['races'] = 'races';
+$route['races/create'] = 'races/create';
+$route['races/update'] = 'races/update';
 
 /*
 | -------------------------------------------------------------------------
