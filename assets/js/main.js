@@ -16,7 +16,7 @@ $(document).ready(function() {
 
 		},
 		requisitosToogle: function(){
-			$('td').on('click', 'a', function(){
+			$('td').on('click', 'big', function(){
 				var dataId = $(this).data('id');
 				$(".panel-body .classe"+dataId).slideToggle(400);
 			});

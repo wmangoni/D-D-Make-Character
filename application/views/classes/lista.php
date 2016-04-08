@@ -14,7 +14,7 @@
       <thead>
         <tr>
           <th><a href="#"><em class="fa fa-cog"></em> Settings</a></th>
-          <th class="hidden-xs">ID</th>
+          <th class="hidden-xs hidden-sm">ID</th>
           <th>Nome da Classe</th>
           <th>Dados de Vida</th>
           <th>Tipo de Bônus Base de Ataque</th>
@@ -32,9 +32,9 @@
                 <a href="<?php echo base_url('classes/drop').'/'.$classe->id ?>" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
             </div>
             </td>
-			
-          <td class="hidden-xs"><?php echo $classe->id; ?></td>
-            <td><a data-id="<?php echo $key; ?>" href="javascript:void(0)"><?php echo $classe->nome; ?></a></td>
+
+          <td class="hidden-xs hidden-sm"><?php echo $classe->id; ?></td>
+            <td><big data-id="<?php echo $key; ?>" href="javascript:void(0)"><?php echo $classe->nome; ?></big></td>
             <td><?php echo $classe->dv; ?></td>
             <td><?php echo $classe->bba_tipo; ?></td>
             <td><?php echo $classe->tipo; ?></td>
