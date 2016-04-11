@@ -20,8 +20,13 @@ $(document).ready(function() {
 				var dataId = $(this).data('id');
 				$(".panel-body .classe"+dataId).slideToggle(400);
 			});
+		},
+		copyHeight: function(){
+			var h = $('#content').height();
+			$('.navbar').height(h);
 		}
 	}
 	base.dropFunction();
 	base.requisitosToogle();
+	base.copyHeight();
 });

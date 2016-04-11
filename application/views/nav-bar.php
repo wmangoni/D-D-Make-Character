@@ -1,4 +1,4 @@
-<div class="col-sm-2 col-md-3 navbar">
+<div class="col-sm-1 col-md-2 navbar">
     <div class="panel-group" id="accordion">
         <div class="panel panel-default">
             <div class="panel-heading">
