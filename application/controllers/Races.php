@@ -14,9 +14,11 @@ class Races extends CI_Controller {
 	{
 		$data['races'] = $this->model_races->get_last_races();
 		$data['sub_title'] = 'Lista de races D&D 3.5';
+        $data['title'] = 'Raças - listagem';
 		$data['description'] = 'Aqui você encontra todas as races disponíveis para seu personagem!';
 		$data['img'] = 'races-rpg.jpg';
 		$this->load->view('nav-bar.php', $data);
+        $this->load->view('content.php');
 		$this->load->view('races/lista');
 		$this->load->view('footer');
 	}
@@ -25,10 +27,12 @@ class Races extends CI_Controller {
     {
         $this->load->helper(array('form'));
         $this->load->library('form_validation');
+        $data['title'] = 'Raças - create';
 		$data['sub_title'] = 'Crie sua Classe';
 		$data['description'] = 'Mas não seja muito apelão, pois o Mestre não gosta!!!';
 		$data['img'] = 'lordsoffallen-rpg-ps4.jpg';
 		$this->load->view('nav-bar.php', $data);
+        $this->load->view('content.php');
 
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('races/create');

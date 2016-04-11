@@ -13,5 +13,5 @@ $title_page = $_SERVER["REQUEST_URI"];
 	<link href="<?php echo base_url('assets/css/main.css'); ?>" rel="stylesheet" type="text/css"></link>
 </head>
 <body>
-<div class="container">
-	<div id="container">
+<div class="row">
+	<div class="col-md-12" id="container">

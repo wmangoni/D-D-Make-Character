@@ -11,9 +11,8 @@ class Home extends CI_Controller {
 	{
 		$data['page_title'] = 'Home';
 		$data['title'] = 'Bem vindo ao Sistema de cadastro de Personagens de RPG (D&D)!';
+		$data['page'] = 'home';
 
-		$this->load->view('header', $data);
-		$this->load->view('home');
-		$this->load->view('footer');
+		$this->load->view('master', $data);
 	}
 }
