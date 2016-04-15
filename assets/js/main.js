@@ -22,8 +22,10 @@ $(document).ready(function() {
 			});
 		},
 		copyHeight: function(){
-			var h = $('#content').height();
-			$('.navbar').height(h);
+			if(window.outerWidth > 800){
+				var h = $('#content').height();
+				$('.navbar').height(h);
+			}
 		}
 	}
 	base.dropFunction();

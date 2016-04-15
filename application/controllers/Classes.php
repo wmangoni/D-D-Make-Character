@@ -35,7 +35,7 @@ class Classes extends CI_Controller {
             $data['page'] = 'classes/create/ok';
         }
 
-        $this->load->view('master', $data);;
+        $this->load->view('master', $data);
     }
     public function edit( $id ){
 

@@ -1,10 +1,10 @@
 <?php if (isset($race)) { $race = (object) $race[0]; } ?>
-<div class="row">
-	<form class="form-horizontal col-md-12" action="<?php echo (isset($race)) ? base_url('classes/update') : base_url('classes/insert') ?>" method="post">
+<div class="col-md-12 painel-create">
+	<form class="form-horizontal col-md-12" action="<?php echo (isset($race)) ? base_url('races/update') : base_url('races/insert') ?>" method="post">
 		<fieldset>
 
 			<!-- Form Name -->
-			<legend><h2 class="h2"><?php echo (isset($race) && isset($race->nome)) ? $race->nome : 'Nova Classe' ?></h2></legend>
+			<legend><h2 class="h2"><?php echo (isset($race) && isset($race->nome)) ? $race->nome : 'Nova Raça' ?></h2></legend>
 
 			<input type="hidden" name="id" value="<?php echo (isset($race) && isset($race->id)) ? $race->id : '' ?>">
 
@@ -12,16 +12,23 @@
 			<div class="form-group">
 				<label class="col-md-4 control-label" for="nome">Nome</label>
 				<div class="col-md-4">
-					<input id="title" name="nome" type="text" placeholder="Nome da Classe" class="form-control input-md" required="" value="<?php echo (isset($race) && isset($race->nome)) ? $race->nome : '' ?>">
+					<input id="nome" name="nome" type="text" placeholder="Nome da Classe" class="form-control input-md" required="" value="<?php echo (isset($race) && isset($race->nome)) ? $race->nome : '' ?>">
 				</div>
 			</div>
 
+
 			<!-- Button Drop Down -->
 			<div class="form-group">
-				<label class="col-md-4 control-label" for="buttondropdown0">Bonus</label>
-				<div class="col-md-4">
+
+				<div class="col-md-3 col-md-offset-3">
+					<label class="control-label" for="bonus">Bônus</label>
+					<input id="bonus" name="bonus" type="text" placeholder="Bonus de atributo" class="form-control input-md" required="" value="<?php echo (isset($race) && isset($race->bonus)) ? $race->bonus : '' ?>">
+				</div>
+
+				<div class="col-md-3">
+					<label class="control-label" for="buttondropdown0">Atributo bônus</label>
 					<div class="input-group">
-						<input class="form-control buttondropdown" id="buttondropdown0" name="dv" class="form-control" placeholder="" type="text" required="" value="<?php echo (isset($race) && isset($race->dv)) ? $race->dv : '' ?>">
+						<input class="form-control buttondropdown" id="buttondropdown0" name="atributo_bonus" class="form-control" placeholder="Atributo que receberá o bônus" type="text" required="" value="<?php echo (isset($race) && isset($race->dv)) ? $race->dv : '' ?>">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 								Selecione
@@ -42,10 +49,15 @@
 
 			<!-- Button Drop Down -->
 			<div class="form-group">
-				<label class="col-md-4 control-label" for="buttondropdown">Desvantagem</label>
-				<div class="col-md-4">
+				<div class="col-md-3 col-md-offset-3">
+					<label class="control-label" for="desvantagem">Desvantagem</label>
+					<input id="desvantagem" name="desvantagem" type="text" placeholder="Desvantagem da raça" class="form-control input-md" required="" value="<?php echo (isset($race) && isset($race->bonus)) ? $race->bonus : '' ?>">
+				</div>
+
+				<div class="col-md-3">
+					<label class="control-label" for="buttondropdown">Atributo desvantagem</label>
 					<div class="input-group">
-						<input class="form-control buttondropdown" id="buttondropdown" name="bba_tipo" class="form-control" placeholder="" type="text" required="" value="<?php echo (isset($race) && isset($race->bba_tipo)) ? $race->bba_tipo : '' ?>">
+						<input class="form-control buttondropdown" id="buttondropdown" name="bba_tipo" class="form-control" placeholder="" type="text" required="Atributo que receberá a desvantagem" value="<?php echo (isset($race) && isset($race->bba_tipo)) ? $race->bba_tipo : '' ?>">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 								Selecione
@@ -65,10 +77,11 @@
 			</div>
 
 			<div class="form-group">
-				<label class="col-md-4 control-label" for="buttondropdown2">Tamanho</label>
-				<div class="col-md-4">
+
+				<div class="col-md-3 col-md-offset-3">
+					<label class="control-label" for="buttondropdown2">Tamanho</label>
 					<div class="input-group">
-						<input class="form-control buttondropdown" id="buttondropdown2" name="tipo" class="form-control" placeholder="" type="text" required="" value="<?php echo (isset($race) && isset($race->tipo)) ? $race->tipo : '' ?>">
+						<input class="form-control buttondropdown" id="buttondropdown2" name="tipo" class="form-control" placeholder="Selecione" type="text" required="" value="<?php echo (isset($race) && isset($race->tipo)) ? $race->tipo : '' ?>">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 								Selecione
@@ -87,31 +100,36 @@
 						</div>
 					</div>
 				</div>
-			</div>
 
-			<div class="form-group">
-				<label class="col-md-4 control-label" for="buttondropdown2">Classe Favorecida</label>
-				<div class="col-md-4">
+				<div class="col-md-3">
+					<label class="control-label" for="buttondropdown2">Classe Favorecida</label>
 					<div class="input-group">
-						<input class="form-control buttondropdown" id="buttondropdown2" name="tipo" class="form-control" placeholder="" type="text" required="" value="<?php echo (isset($race) && isset($race->tipo)) ? $race->tipo : '' ?>">
+						<input class="form-control buttondropdown" id="buttondropdown2" name="tipo" class="form-control" placeholder="Selecione" type="text" required="" value="<?php echo (isset($race) && isset($race->tipo)) ? $race->tipo : '' ?>">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 								Selecione
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu pull-right bba_tipo">
-								<li><a href="javascript:void(0)">Mínimo</a></li>
+								<?php if(isset($classes)) : ?>
+									<?php foreach($classes as $key => $class) : ?>
+										<li><a href="javascript:void(0)"><?php echo $class->nome ?></a></li>
+									<?php endforeach; ?>
+								<?php endif; ?>
 							</ul>
 						</div>
 					</div>
 				</div>
+
 			</div>
 
 			<!-- Button -->
 			<div class="form-group">
-				<label class="col-md-4 control-label" for="submit">Salvar</label>
-				<div class="col-md-4">
-					<button id="submit" name="submit" class="btn btn-primary"><input type="submit" value="OK"/><i class="glyphicon glyphicon-floppy-open"></i>&nbsp;</button>
+				<div class="col-md-3 col-md-offset-3">
+				<label class="control-label" for="submit">Salvar</label>
+					<div class="input-group">
+						<button id="submit" name="submit" class="btn btn-primary"><input type="submit" value="OK"/><i class="glyphicon glyphicon-floppy-open"></i>&nbsp;</button>
+					</div>
 				</div>
 			</div>
 

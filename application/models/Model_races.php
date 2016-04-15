@@ -5,11 +5,12 @@ class Model_races extends CI_Model {
 
     public $id;
     public $nome;
-    public $dv;
-    public $bba_tipo;
-    public $resistencia;
-    public $tipo;
-    public $requisitos;
+    public $bonus;
+    public $atributo_bonus;
+    public $desvantagem;
+    public $atributo_desvantagem;
+    public $tamanho;
+    public $classe_favorecida;
 
 
     public function __construct()
@@ -35,43 +36,57 @@ class Model_races extends CI_Model {
         return $this->db->get('races')->result();
     }
 
-    public function insert_classe()
+    public function insert_race()
     {
 		//echo '<pre>';
 		//var_dump($_POST);
 		//die('teste');
-        $this->nome = $_POST['nome'];
-        $this->dv = $_POST['dv'];
-        $this->bba_tipo = $_POST['bba_tipo'];
-        $this->resistencia = $_POST['resistencia'];
-        $this->tipo = $_POST['tipo'];
-        $this->requisitos = $_POST['requisitos'];
+        $this->id = $_POST["id"];
+        $this->nome = $_POST["nome"];
+        $this->bonus = $_POST["bonus"];
+        $this->atributo_bonus = $_POST["atributo_bonus"];
+        $this->desvantagem = $_POST["desvantagem"];
+        $this->atributo_desvantagem = $_POST["atributo_desvantagem"];
+        $this->tamanho = $_POST["tamanho"];
+        $this->classe_favorecida = $_POST["classe_favorecida"];
 
         $this->db->insert('races', $this);
     }
 
-    public function update_classe()
+    public function update_race()
     {
-        if (isset($_POST['id']))
-            $this->id = $_POST['id'];
 
-        if(isset($_POST['nome']))
-            $this->nome = $_POST['nome']; // please read the below note
+        if(isset($_POST["id"])){
+            $this->id = $_POST["id"];
+        }
 
-        if(isset($_POST['dv']))
-            $this->dv  = $_POST['dv'];
+        if(isset($_POST["nome"])){
+            $this->nome = $_POST["nome"];
+        }
 
-        if(isset($_POST['bba_tipo']))
-            $this->bba_tipo  = $_POST['bba_tipo'];
+        if(isset($_POST["bonus"])){
+            $this->bonus = $_POST["bonus"];
+        }
 
-        if(isset($_POST['resistencia']))
-            $this->resistencia = $_POST['resistencia'];
+        if(isset($_POST["atributo_bonus"])){
+            $this->atributo_bonus = $_POST["atributo_bonus"];
+        }
 
-        if(isset($_POST['tipo']))
-            $this->tipo = $_POST['tipo'];
+        if(isset($_POST["desvantagem"])){
+            $this->desvantagem = $_POST["desvantagem"];
+        }
 
-        if(isset($_POST['requisitos']))
-            $this->requisitos = $_POST['requisitos'];
+        if(isset($_POST["atributo_desvantagem"])){
+            $this->atributo_desvantagem = $_POST["atributo_desvantagem"];
+        }
+
+        if(isset($_POST["tamanho"])){
+            $this->tamanho = $_POST["tamanho"];
+        }
+
+        if(isset($_POST["classe_favorecida"])){
+            $this->classe_favorecida = $_POST["classe_favorecida"];
+        }
 
         $this->db->update('races', $this, array('id' => $_POST['id']));
     }
