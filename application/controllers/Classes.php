@@ -5,8 +5,7 @@ class Classes extends CI_Controller {
 	public function __construct()
 	{
 		parent::__construct();
-		$title['page_title'] = 'Classes';
-		$this->load->view('header',$title);
+		$data['page_title'] = 'Classes';
 		$this->load->model('model_classes');
 	}
 
@@ -17,45 +16,46 @@ class Classes extends CI_Controller {
 		$data['sub_title'] = 'Lista de Classes D&D 3.5';
 		$data['description'] = 'Aqui você encontra todas as classes disponíveis para seu personagem!';
 		$data['img'] = 'classes-rpg.jpg';
-		$this->load->view('nav-bar.php', $data);
-		$this->load->view('classes/lista');
-		$this->load->view('footer');
+		$data['page'] = 'classes/lista';
+        $this->load->view('master', $data);
 	}
 
 	public function create()
     {
         $this->load->helper(array('form'));
         $this->load->library('form_validation');
-		$data['sub_title'] = 'Crie sua Classe';
+        $data['title'] = 'Classe - criar';
+		$data['sub_title'] = 'Crie uma Classe';
 		$data['description'] = 'Mas não seja muito apelão, pois o Mestre não gosta!!!';
 		$data['img'] = 'lordsoffallen-rpg-ps4.jpg';
-		$this->load->view('nav-bar.php', $data);
 
         if ($this->form_validation->run() == FALSE) {
-            $this->load->view('classes/create');
+            $data['page'] = 'classes/create';
         } else {
-            $this->load->view('classes/create/ok');
+            $data['page'] = 'classes/create/ok';
         }
 
-        $this->load->view('footer');
+        $this->load->view('master', $data);
     }
     public function edit( $id ){
 
     	$this->load->helper(array('form'));
         $this->load->library('form_validation');
+        $data['title'] = 'Classe - edição';
+        $data['description'] = 'Altere os campos necessários para mehorar essa classe!!!';
 
         $data['class'] = $this->model_classes->get_classe_by_id($id);
         if($data['class']){
 	        if ($this->form_validation->run() == FALSE) {
-	            $this->load->view('classes/create', $data);
-	        } else {
-	            $this->load->view('classes/create/ok', $data);
-	        }
+                $data['page'] = 'classes/create';
+            } else {
+                $data['page'] = 'classes/create/ok';
+            }
         } else {
         	$this->index();
         }
 
-        $this->load->view('footer');
+        $this->load->view('master', $data);
 
     }
     public function update(){

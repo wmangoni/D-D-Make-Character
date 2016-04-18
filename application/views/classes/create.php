@@ -1,5 +1,5 @@
 <?php if (isset($class)) { $class = (object) $class[0]; } ?>
-<div class="row">
+<div class="col-md-12 painel-create">
 	<form class="form-horizontal col-md-12" action="<?php echo (isset($class)) ? base_url('classes/update') : base_url('classes/insert') ?>" method="post">
 		<fieldset>
 

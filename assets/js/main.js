@@ -20,8 +20,15 @@ $(document).ready(function() {
 				var dataId = $(this).data('id');
 				$(".panel-body .classe"+dataId).slideToggle(400);
 			});
+		},
+		copyHeight: function(){
+			if(window.outerWidth > 800){
+				var h = $('#content').height();
+				$('.navbar').height(h);
+			}
 		}
 	}
 	base.dropFunction();
 	base.requisitosToogle();
+	base.copyHeight();
 });

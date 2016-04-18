@@ -29,6 +29,11 @@ class Model_classes extends CI_Model {
         $query = $this->db->get('classes', 20, $offset);
         return $query->result();
     }
+    public function get_all_classes()
+    {
+        $query = $this->db->get('classes');
+        return $query->result();
+    }
     public function get_classe_by_id($id){
         $this->db->select('*');
         $this->db->where('id',$id);
