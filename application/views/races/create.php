@@ -22,13 +22,13 @@
 
 				<div class="col-md-3 col-md-offset-3">
 					<label class="control-label" for="bonus">Bônus</label>
-					<input id="bonus" name="bonus" type="text" placeholder="Bonus de atributo" class="form-control input-md" required="" value="<?php echo (isset($race) && isset($race->bonus)) ? $race->bonus : '' ?>">
+					<input id="bonus" name="bonus" type="text" placeholder="Bonus de atributo" class="form-control input-md" value="<?php echo (isset($race) && isset($race->bonus)) ? $race->bonus : '' ?>">
 				</div>
 
 				<div class="col-md-3">
 					<label class="control-label" for="buttondropdown0">Atributo bônus</label>
 					<div class="input-group">
-						<input class="form-control buttondropdown" id="buttondropdown0" name="atributo_bonus" class="form-control" placeholder="Atributo que receberá o bônus" type="text" required="" value="<?php echo (isset($race) && isset($race->dv)) ? $race->dv : '' ?>">
+						<input class="form-control buttondropdown" id="buttondropdown0" name="atributo_bonus" class="form-control" placeholder="Atributo que receberá o bônus" type="text" value="<?php echo (isset($race) && isset($race->atributo_bonus)) ? $race->atributo_bonus : '' ?>">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 								Selecione
@@ -51,13 +51,13 @@
 			<div class="form-group">
 				<div class="col-md-3 col-md-offset-3">
 					<label class="control-label" for="desvantagem">Desvantagem</label>
-					<input id="desvantagem" name="desvantagem" type="text" placeholder="Desvantagem da raça" class="form-control input-md" required="" value="<?php echo (isset($race) && isset($race->bonus)) ? $race->bonus : '' ?>">
+					<input id="desvantagem" name="desvantagem" type="text" placeholder="Desvantagem da raça" class="form-control input-md" value="<?php echo (isset($race) && isset($race->desvantagem)) ? $race->desvantagem : '' ?>">
 				</div>
 
 				<div class="col-md-3">
 					<label class="control-label" for="buttondropdown">Atributo desvantagem</label>
 					<div class="input-group">
-						<input class="form-control buttondropdown" id="buttondropdown" name="bba_tipo" class="form-control" placeholder="" type="text" required="Atributo que receberá a desvantagem" value="<?php echo (isset($race) && isset($race->bba_tipo)) ? $race->bba_tipo : '' ?>">
+						<input class="form-control buttondropdown" id="buttondropdown" name="atributo_desvantagem" class="form-control" placeholder="" type="text" value="<?php echo (isset($race) && isset($race->atributo_desvantagem)) ? $race->atributo_desvantagem : '' ?>">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 								Selecione
@@ -81,7 +81,7 @@
 				<div class="col-md-3 col-md-offset-3">
 					<label class="control-label" for="buttondropdown2">Tamanho</label>
 					<div class="input-group">
-						<input class="form-control buttondropdown" id="buttondropdown2" name="tipo" class="form-control" placeholder="Selecione" type="text" required="" value="<?php echo (isset($race) && isset($race->tipo)) ? $race->tipo : '' ?>">
+						<input class="form-control buttondropdown" id="buttondropdown2" name="tamanho" class="form-control" placeholder="Selecione" type="text" required="" value="<?php echo (isset($race) && isset($race->tamanho)) ? $race->tamanho : '' ?>">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 								Selecione
@@ -104,7 +104,7 @@
 				<div class="col-md-3">
 					<label class="control-label" for="buttondropdown2">Classe Favorecida</label>
 					<div class="input-group">
-						<input class="form-control buttondropdown" id="buttondropdown2" name="tipo" class="form-control" placeholder="Selecione" type="text" required="" value="<?php echo (isset($race) && isset($race->tipo)) ? $race->tipo : '' ?>">
+						<input class="form-control buttondropdown" id="buttondropdown2" name="classe_favorecida" class="form-control" placeholder="Selecione" type="text" required="" value="<?php echo (isset($race) && isset($race->classe_favorecida)) ? $race->classe_favorecida : '' ?>">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 								Selecione
@@ -112,6 +112,7 @@
 							</button>
 							<ul class="dropdown-menu pull-right bba_tipo">
 								<?php if(isset($classes)) : ?>
+									<li><a href="javascript:void(0)">Qualquer uma</li>
 									<?php foreach($classes as $key => $class) : ?>
 										<li><a href="javascript:void(0)"><?php echo $class->nome ?></a></li>
 									<?php endforeach; ?>

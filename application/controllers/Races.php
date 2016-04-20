@@ -43,10 +43,14 @@ class Races extends CI_Controller {
 
     	$this->load->helper(array('form'));
         $this->load->library('form_validation');
+		$data['title'] = 'Raça - edição';
+		$data['description'] = 'Altere os campos necessários para aprimorar esta raça!!!';
+		$this->load->model('model_classes');
+        $data['classes'] = $this->model_classes->get_all_classes();
 
-        $data['class'] = $this->model_races->get_classe_by_id($id);
+        $data['race'] = $this->model_races->get_classe_by_id($id);
 
-        if($data['class']){
+        if($data['race']){
 	        if ($this->form_validation->run() == FALSE) {
 	            $data['page'] = 'races/create';
             } else {
@@ -59,7 +63,7 @@ class Races extends CI_Controller {
 
     }
     public function update(){
-        $this->model_races->update_classe();
+        $this->model_races->update_race();
         redirect('/races');
     }
     public function insert(){

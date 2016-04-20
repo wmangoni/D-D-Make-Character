@@ -1,7 +1,7 @@
 CÓDICE DE TALENTOS PARA D&D 3.5
 http://docslide.com.br/documents/dd-35-codice-de-talentos.html
 <?php
-INSERT INTO talentos (nome,tipo) VALUES('MOSTRAR-SE VIGOROSO', 'GUE');
+echo "INSERT INTO talentos (nome,tipo) VALUES('MOSTRAR-SE VIGOROSO', 'GUE');
 INSERT INTO talentos (nome) VALUES('MOVIMENTO PRECISO');
 INSERT INTO talentos (nome,tipo) VALUES('MURALHA ATRÁS', 'GUE');
 INSERT INTO talentos (nome) VALUES('MÚSICA ADICIONAL');
@@ -247,3 +247,4 @@ INSERT INTO talentos (nome,tipo) VALUES('VOTO SAGRADO', 'EXALTADO');
 INSERT INTO talentos (nome,tipo) VALUES('VOZ BLASFEMADORA', 'MÚSICA DE BARDO');
 INSERT INTO talentos (nome) VALUES('VULTO URBANO');
 INSERT INTO talentos (nome,tipo) VALUES('ZONA NEGATIVA', 'DIVINO, ÉPICO');
+";

@@ -1,4 +1,5 @@
 <div class="col-md-3 col-lg-2 navbar">
+	<img class="img-responsive" src="<?php echo (isset($img)) ? base_url("assets/img/{$img}") : base_url("assets/img/fate-ficha-e-dados.jpg"); ?>" title="O melhor do RPG">
     <div class="panel-group" id="accordion">
         <div class="panel panel-default">
             <div class="panel-heading">
@@ -12,9 +13,6 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h4 class="panel-title">
-					<!--div id="link_personagem" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" class="collapsed" aria-expanded="false">
-						<a style="cursor: pointer;">Personagens</a>
-					</div-->
                     <a href="<?php echo base_url() ?>">
                         <span class="glyphicon glyphicon-user"></span> Personagens
                     </a>
@@ -24,12 +22,12 @@
                 <div class="panel-body">
                     <table class="table">
                         <tr>
-                            <td>
+                            <td class="sub-td">
                                 <span class="glyphicon glyphicon-list-alt"></span><a href="#"> Listar</a>
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td class="sub-td">
                                 <span class="glyphicon glyphicon-plus"></span><a href="#"> Cadastrar</a>
                             </td>
                         </tr>
@@ -49,12 +47,12 @@
                 <div class="panel-body">
                     <table class="table">
                         <tr>
-                            <td>
+                            <td class="sub-td">
                                 <span class="glyphicon glyphicon-list-alt"></span><a href="<?php echo base_url('classes') ?>"> Listar</a>
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td class="sub-td">
                                 <span class="glyphicon glyphicon-plus"></span><a href="<?php echo base_url('classes/create') ?>"> Cadastrar</a>
                             </td>
                         </tr>
@@ -74,22 +72,22 @@
                 <div class="panel-body">
                     <table class="table">
                         <tr>
-                            <td>
+                            <td class="sub-td">
                                 <span class="glyphicon glyphicon-list-alt"></span><a href="#"> Listar</a>
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td class="sub-td">
                                 <span class="glyphicon glyphicon-plus"></span><a href="#"> Cadastrar</a>
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td class="sub-td">
                                 <a href="#">Notifications</a> <span class="label label-info">5</span>
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td class="sub-td">
                                 <span class="glyphicon glyphicon-download"></span><a href="#"> Exportar</a>
                             </td>
                         </tr>
@@ -109,12 +107,12 @@
                 <div class="panel-body">
                     <table class="table">
                         <tr>
-                            <td>
+                            <td class="sub-td">
                                 <span class="glyphicon glyphicon-list-alt"></span><a href="#"> Listar</a>
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td class="sub-td">
                                 <span class="glyphicon glyphicon-plus"></span><a href="#"> Cadastrar</a>
                             </td>
                         </tr>
@@ -134,12 +132,12 @@
                 <div class="panel-body">
                     <table class="table">
                         <tr>
-                            <td>
+                            <td class="sub-td">
                                 <span class="glyphicon glyphicon-list-alt"></span><a href="<?php echo base_url('races') ?>"> Listar</a>
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                           	<td class="sub-td">
                                 <span class="glyphicon glyphicon-plus"></span><a href="<?php echo base_url('races/create') ?>"> Cadastrar</a>
                             </td>
                         </tr>
@@ -159,12 +157,12 @@
                 <div class="panel-body">
                     <table class="table">
                         <tr>
-                            <td>
+                            <td class="sub-td">
                                 <span class="glyphicon glyphicon-list-alt"></span><a href="#"> Listar</a>
                             </td>
                         </tr>
                         <tr>
-                            <td>
+                            <td class="sub-td">
                                 <span class="glyphicon glyphicon-plus"></span><a href="#"> Cadastrar</a>
                             </td>
                         </tr>
