@@ -13,32 +13,31 @@
     <table class="table table-striped table-bordered table-list">
       <thead>
         <tr>
-          <th><a href="#"><em class="fa fa-cog"></em> Settings</a></th>
           <th class="hidden-xs">ID</th>
           <th>Nome da Raça</th>
           <th>Bonus</th>
           <th>Desvantagem</th>
           <th>Tamanho</th>
           <th>Classe Favorecida</th>
+          <th><a href="#"><em class="fa fa-cog"></em> Settings</a></th>
         </tr>
       </thead>
       <tbody>
         <?php foreach($races as $key => $races) : ?>
           <tr>
+            <td class="hidden-xs"><?php echo $races->id; ?></td>
+              <td><a data-id="<?php echo $key; ?>" href="javascript:void(0)"><?php echo $races->nome; ?></a></td>
+              <td><?php echo '+'.$races->bonus.' '.$races->atributo_bonus; ?></td>
+              <td><?php echo '-'.$races->desvantagem.' '.$races->atributo_desvantagem; ?></td>
+              <td><?php echo $races->tamanho; ?></td>
+              <td><?php echo $races->classe_favorecida; ?></td>
             <td align="center">
-			  <div class="ui-group-buttons">
+              <div class="ui-group-buttons">
                 <a href="<?php echo base_url('races/edit').'/'.$races->id; ?>" class="btn btn-success" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
                 <div class="or"></div>
                 <a href="<?php echo base_url('races/drop').'/'.$races->id ?>" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
-            </div>
+              </div>
             </td>
-			
-          <td class="hidden-xs"><?php echo $races->id; ?></td>
-            <td><a data-id="<?php echo $key; ?>" href="javascript:void(0)"><?php echo $races->nome; ?></a></td>
-            <td><?php echo '+'.$races->bonus.' '.$races->atributo_bonus; ?></td>
-            <td><?php echo '-'.$races->desvantagem.' '.$races->atributo_desvantagem; ?></td>
-            <td><?php echo $races->tamanho; ?></td>
-            <td><?php echo $races->classe_favorecida; ?></td>
           </tr>
           <tr class="requisitos races<?php echo $key; ?>" style="display:none;">
             <td colspan="7">Pré-requisitos:<br /><?php echo 'description'//$races->requisitos; ?></td>
