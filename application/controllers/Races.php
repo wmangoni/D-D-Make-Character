@@ -26,7 +26,7 @@ class Races extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->model('model_classes');
         $data['classes'] = $this->model_classes->get_all_classes();
-        $data['title'] = 'Raças - create';
+        $data['title'] = 'Raças - criar';
 		$data['sub_title'] = 'Crie sua Classe';
 		$data['description'] = 'Mas não seja muito apelão, pois o Mestre não gosta!!!';
 		$data['img'] = 'lordsoffallen-rpg-ps4.jpg';
@@ -43,7 +43,7 @@ class Races extends CI_Controller {
 
     	$this->load->helper(array('form'));
         $this->load->library('form_validation');
-		$data['title'] = 'Raça - edição';
+		$data['title'] = 'Raça - editar';
 		$data['description'] = 'Altere os campos necessários para aprimorar esta raça!!!';
 		$this->load->model('model_classes');
         $data['classes'] = $this->model_classes->get_all_classes();

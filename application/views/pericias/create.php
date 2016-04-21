@@ -48,7 +48,7 @@
 				<div class="col-md-3 col-md-offset-3">
 					<label class="control-label" for="buttondropdown">Bárbaro</label>
 					<div class="input-group">
-						<input class="form-control buttondropdown" id="buttondropdown" name="bar" class="form-control" placeholder="" type="text" value="<?php echo (isset($pericia) && isset($pericia->bar)) ? $pericia->bar : '' ?>">
+						<input class="form-control buttondropdown" id="buttondropdown" name="bar" class="form-control" placeholder="Selecione" type="text" value="<?php echo (isset($pericia) && isset($pericia->bar)) ? $pericia->bar : '' ?>">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 								Selecione
@@ -96,9 +96,11 @@
 							</ul>
 						</div>
 					</div>
+				</div>
+				<div class="col-md-3">
 					<label class="control-label" for="buttondropdown">Druída</label>
 					<div class="input-group">
-						<input class="form-control buttondropdown" id="buttondropdown" name="dru" class="form-control" placeholder="" type="text" value="<?php echo (isset($pericia) && isset($pericia->dru)) ? $pericia->dru : '' ?>">
+						<input class="form-control buttondropdown" id="buttondropdown" name="dru" class="form-control" placeholder="Selecione" type="text" value="<?php echo (isset($pericia) && isset($pericia->dru)) ? $pericia->dru : '' ?>">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 								Selecione
@@ -111,11 +113,8 @@
 						</div>
 					</div>
 				</div>
-
-				<div class="col-md-3">
-				</div>
-
 			</div>
+
 			<div class="form-group">
 				<div class="col-md-3 col-md-offset-3">
 					<label class="control-label" for="buttondropdown2">Guerreiro</label>
@@ -132,9 +131,11 @@
 							</ul>
 						</div>
 					</div>
+				</div>
+				<div class="col-md-3">
 					<label class="control-label" for="buttondropdown">Monge</label>
 					<div class="input-group">
-						<input class="form-control buttondropdown" id="buttondropdown" name="mon" class="form-control" placeholder="" type="text" value="<?php echo (isset($pericia) && isset($pericia->mon)) ? $pericia->mon : '' ?>">
+						<input class="form-control buttondropdown" id="buttondropdown" name="mon" class="form-control" placeholder="Selecione" type="text" value="<?php echo (isset($pericia) && isset($pericia->mon)) ? $pericia->mon : '' ?>">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 								Selecione
@@ -147,11 +148,8 @@
 						</div>
 					</div>
 				</div>
-
-				<div class="col-md-3">
-				</div>
-
 			</div>
+
 			<div class="form-group">
 				<div class="col-md-3 col-md-offset-3">
 					<label class="control-label" for="buttondropdown2">Paladino</label>
@@ -168,9 +166,11 @@
 							</ul>
 						</div>
 					</div>
+				</div>
+				<div class="col-md-3">
 					<label class="control-label" for="buttondropdown">Ranger</label>
 					<div class="input-group">
-						<input class="form-control buttondropdown" id="buttondropdown" name="ran" class="form-control" placeholder="" type="text" value="<?php echo (isset($pericia) && isset($pericia->ran)) ? $pericia->ran : '' ?>">
+						<input class="form-control buttondropdown" id="buttondropdown" name="ran" class="form-control" placeholder="Selecione" type="text" value="<?php echo (isset($pericia) && isset($pericia->ran)) ? $pericia->ran : '' ?>">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 								Selecione
@@ -183,11 +183,8 @@
 						</div>
 					</div>
 				</div>
-
-				<div class="col-md-3">
-				</div>
-
 			</div>
+
 			<div class="form-group">
 				<div class="col-md-3 col-md-offset-3">
 					<label class="control-label" for="buttondropdown2">Paladino</label>
@@ -204,9 +201,11 @@
 							</ul>
 						</div>
 					</div>
+				</div>
+				<div class="col-md-3">
 					<label class="control-label" for="buttondropdown">Ranger</label>
 					<div class="input-group">
-						<input class="form-control buttondropdown" id="buttondropdown" name="ran" class="form-control" placeholder="" type="text" value="<?php echo (isset($pericia) && isset($pericia->ran)) ? $pericia->ran : '' ?>">
+						<input class="form-control buttondropdown" id="buttondropdown" name="ran" class="form-control" placeholder="Selecione" type="text" value="<?php echo (isset($pericia) && isset($pericia->ran)) ? $pericia->ran : '' ?>">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 								Selecione
@@ -219,11 +218,8 @@
 						</div>
 					</div>
 				</div>
-
-				<div class="col-md-3">
-				</div>
-
 			</div>
+
 			<div class="form-group">
 				<div class="col-md-3 col-md-offset-3">
 					<label class="control-label" for="buttondropdown2">Ladino</label>
@@ -240,9 +236,11 @@
 							</ul>
 						</div>
 					</div>
+				</div>
+				<div class="col-md-3">
 					<label class="control-label" for="buttondropdown">Fiticeiro</label>
 					<div class="input-group">
-						<input class="form-control buttondropdown" id="buttondropdown" name="fei" class="form-control" placeholder="" type="text" value="<?php echo (isset($pericia) && isset($pericia->fei)) ? $pericia->fei : '' ?>">
+						<input class="form-control buttondropdown" id="buttondropdown" name="fei" class="form-control" placeholder="Selecione" type="text" value="<?php echo (isset($pericia) && isset($pericia->fei)) ? $pericia->fei : '' ?>">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 								Selecione
@@ -255,10 +253,6 @@
 						</div>
 					</div>
 				</div>
-
-				<div class="col-md-3">
-				</div>
-
 			</div>
 
 			<!-- Button -->

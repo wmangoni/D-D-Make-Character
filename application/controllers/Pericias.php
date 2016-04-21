@@ -14,6 +14,7 @@ class Pericias extends CI_Controller {
         //$this->output->enable_profiler(TRUE);
 		$data['pericias'] = $this->model_pericias->get_last_pericias();
 		$data['sub_title'] = 'Lista de pericias D&D 3.5';
+        $data['title'] = 'Perícias - listagem';
 		$data['description'] = 'Aqui você encontra todas as pericias disponíveis para seu personagem!';
 		$data['img'] = 'rpg-ancient-paper.jpg';
 		$data['page'] = 'pericias/lista';
@@ -24,7 +25,7 @@ class Pericias extends CI_Controller {
     {
         $this->load->helper(array('form'));
         $this->load->library('form_validation');
-        $data['title'] = 'pericias - criar';
+        $data['title'] = 'Pericias - criar';
 		$data['sub_title'] = 'Crie uma pericia';
 		$data['description'] = 'Mas não seja muito apelão, pois o Mestre não gosta!!!';
 		$data['img'] = 'lordsoffallen-rpg-ps4.jpg';
@@ -41,7 +42,7 @@ class Pericias extends CI_Controller {
 
     	$this->load->helper(array('form'));
         $this->load->library('form_validation');
-        $data['title'] = 'pericias - edição';
+        $data['title'] = 'Pericias - editar';
         $data['description'] = 'Altere os campos necessários para mehorar essa pericia!!!';
 
         $data['class'] = $this->model_pericias->get_pericia_by_id($id);
