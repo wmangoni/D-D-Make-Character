@@ -11,6 +11,9 @@ $route['classes/update'] = 'classes/update';
 $route['races'] = 'races';
 $route['races/create'] = 'races/create';
 $route['races/update'] = 'races/update';
+$route['peicias'] = 'peicias';
+$route['pericias/create'] = 'pericias/create';
+$route['pericias/update'] = 'pericias/update';
 
 /*
 | -------------------------------------------------------------------------
