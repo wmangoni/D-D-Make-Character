@@ -45,8 +45,8 @@ class Pericias extends CI_Controller {
         $data['title'] = 'Pericias - editar';
         $data['description'] = 'Altere os campos necessários para mehorar essa pericia!!!';
 
-        $data['class'] = $this->model_pericias->get_pericia_by_id($id);
-        if($data['class']){
+        $data['pericia'] = $this->model_pericias->get_pericia_by_id($id);
+        if($data['pericia']){
 	        if ($this->form_validation->run() == FALSE) {
                 $data['page'] = 'pericias/create';
             } else {

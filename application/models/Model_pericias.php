@@ -42,7 +42,7 @@ class Model_pericias extends CI_Model {
         $query = $this->db->get('pericias');
         return $query->result();
     }
-    public function get_pericia($id){
+    public function get_pericia_by_id($id){
         $this->db->select('*');
         $this->db->where('id',$id);
         return $this->db->get('pericias')->result();
