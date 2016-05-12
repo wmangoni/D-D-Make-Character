@@ -31,10 +31,9 @@ class Model_pericias extends CI_Model {
         $query = $this->db->get('pericias', 20);
         return $query->result();
     }
-    public function get_pericias($page)
+    public function get_pericias($limit, $offset)
     {
-        $offset = (int) $page * 20;
-        $query = $this->db->get('pericias', 20, $offset);
+        $query = $this->db->get('pericias', $limit, $offset);
         return $query->result();
     }
     public function get_all_pericias()

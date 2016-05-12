@@ -66,9 +66,10 @@
   </div>
   <div class="panel-footer">
     <div class="row">
-      <div class="col col-xs-4">Page 1 of 5
+      <div class="col col-xs-4"><?php echo 'Page ' . $current_page .' of ' . $total_page ?>
       </div>
-      <div class="col col-xs-8">
+      <?php echo $pagination; ?>
+      <!-- <div class="col col-xs-8">
         <ul class="pagination hidden-xs pull-right">
           <li><a href="#">1</a></li>
           <li><a href="#">2</a></li>
@@ -81,6 +82,7 @@
           <li><a href="#">»</a></li>
         </ul>
       </div>
+        -->
     </div>
   </div>
 </div>

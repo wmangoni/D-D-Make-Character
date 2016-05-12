@@ -187,41 +187,6 @@
 
 			<div class="form-group">
 				<div class="col-md-3 col-md-offset-3">
-					<label class="control-label" for="buttondropdown2">Paladino</label>
-					<div class="input-group">
-						<input class="form-control buttondropdown" id="buttondropdown2" name="pal" class="form-control" placeholder="Selecione" type="text" required="" value="<?php echo (isset($pericia) && isset($pericia->pal)) ? $pericia->pal : '' ?>">
-						<div class="input-group-btn">
-							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-								Selecione
-								<span class="caret"></span>
-							</button>
-							<ul class="dropdown-menu pull-right bba_tipo">
-								<li><a href="javascript:void(0)">0</a></li>
-								<li><a href="javascript:void(0)">1</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-3">
-					<label class="control-label" for="buttondropdown">Ranger</label>
-					<div class="input-group">
-						<input class="form-control buttondropdown" id="buttondropdown" name="ran" class="form-control" placeholder="Selecione" type="text" value="<?php echo (isset($pericia) && isset($pericia->ran)) ? $pericia->ran : '' ?>">
-						<div class="input-group-btn">
-							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-								Selecione
-								<span class="caret"></span>
-							</button>
-							<ul class="dropdown-menu pull-right bba_tipo">
-								<li><a href="javascript:void(0)">0</a></li>
-								<li><a href="javascript:void(0)">1</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-
-			<div class="form-group">
-				<div class="col-md-3 col-md-offset-3">
 					<label class="control-label" for="buttondropdown2">Ladino</label>
 					<div class="input-group">
 						<input class="form-control buttondropdown" id="buttondropdown2" name="lad" class="form-control" placeholder="Selecione" type="text" required="" value="<?php echo (isset($pericia) && isset($pericia->lad)) ? $pericia->lad : '' ?>">
@@ -241,6 +206,25 @@
 					<label class="control-label" for="buttondropdown">Fiticeiro</label>
 					<div class="input-group">
 						<input class="form-control buttondropdown" id="buttondropdown" name="fei" class="form-control" placeholder="Selecione" type="text" value="<?php echo (isset($pericia) && isset($pericia->fei)) ? $pericia->fei : '' ?>">
+						<div class="input-group-btn">
+							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+								Selecione
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu pull-right bba_tipo">
+								<li><a href="javascript:void(0)">0</a></li>
+								<li><a href="javascript:void(0)">1</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-md-3 col-md-offset-3">
+					<label class="control-label" for="buttondropdown21">Mago</label>
+					<div class="input-group">
+						<input class="form-control buttondropdown" id="buttondropdown21" name="mag" class="form-control" placeholder="Selecione" type="text" required="" value="<?php echo (isset($pericia) && isset($pericia->mag)) ? $pericia->mag : '' ?>">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 								Selecione
