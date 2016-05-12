@@ -5,6 +5,9 @@
 ::selection { background-color: #E13300; color: white; }
 ::-moz-selection { background-color: #E13300; color: white;}
 a {color: #3B33C3;background-color: transparent;font-family: 'Bad Script', cursive, normal Helvetica, Arial, sans-serif;font-weight: normal;}
+.pagination a{font-family: normal Helvetica, Arial, sans-serif;font-weight: normal;}
+.pagination .current_page{text-decoration: underline;font-weight: bold;color: red;}
+.pages-number {font-size: 20px; margin: 10px 0 0 6px;}
 .sub-td a{color:#FFE787;}
 h1 {color: #3B0DC3;background-color: transparent;border-bottom: 1px solid #D0D0D0; font-family: 'Lovers Quarrel', cursive; font-size: 34px;font-weight: normal;margin: 0 0 14px 0;padding: 14px 15px 10px 15px;}
 h4{color: #FFE787 !important}

@@ -66,7 +66,7 @@
   </div>
   <div class="panel-footer">
     <div class="row">
-      <div class="col col-xs-4"><?php echo 'Page ' . $current_page .' of ' . $total_page ?>
+      <div class="col col-xs-4 pages-number"><?php echo 'Page ' . $current_page .' of ' . $total_page ?>
       </div>
       <?php echo $pagination; ?>
       <!-- <div class="col col-xs-8">

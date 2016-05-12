@@ -30,8 +30,8 @@ class Pericias extends CI_Controller {
         $config['per_page'] = $limit;
         $config['uri_segment'] = 3;
         $config['num_links'] = 5;
-        $config['full_tag_open'] = '<div class="col col-xs-4"><ul class="pagination hidden-xs pull-right">';
-        $config['full_tag_close'] = '</ul></div>';
+        $config['full_tag_open'] = '<div class="col col-xs-4"><center><ul class="pagination hidden-xs">';
+        $config['full_tag_close'] = '</ul></center></div>';
         $config['first_link'] = 'First';
         $config['first_tag_open'] = '<li>';
         $config['first_tag_close'] = '</li>';
@@ -44,7 +44,7 @@ class Pericias extends CI_Controller {
         $config['prev_link'] = '&lt;';
         $config['prev_tag_open'] = '<li>';
         $config['prev_tag_close'] = '</li>';
-        $config['cur_tag_open'] = '<li><a style="font-weight:bold">';
+        $config['cur_tag_open'] = '<li><a class="current_page">';
         $config['cur_tag_close'] = '</a></li>';
         $config['num_tag_open'] = '<li>';
         $config['num_tag_close'] = '</li>';
