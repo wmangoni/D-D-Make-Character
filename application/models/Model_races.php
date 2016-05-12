@@ -24,10 +24,9 @@ class Model_races extends CI_Model {
         $query = $this->db->get('races', 20);
         return $query->result();
     }
-    public function get_races($page)
+    public function get_races($limit, $offset)
     {
-        $offset = (int) $page * 20;
-        $query = $this->db->get('races', 20, $offset);
+        $query = $this->db->get('races', $limit, $offset);
         return $query->result();
     }
     public function get_classe_by_id($id){

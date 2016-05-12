@@ -13,12 +13,12 @@ class Pericias extends CI_Controller {
 	{
         //$this->output->enable_profiler(TRUE);
         $limit = 20;
-		$data['pericias'] = $this->model_pericias->get_pericias($limit, $offset);
-		$data['sub_title'] = 'Lista de pericias D&D 3.5';
+        $data['pericias'] = $this->model_pericias->get_pericias($limit, $offset);
+        $data['sub_title'] = 'Lista de pericias D&D 3.5';
         $data['title'] = 'Perícias - listagem';
-		$data['description'] = 'Aqui você encontra todas as pericias disponíveis para seu personagem!';
-		$data['img'] = 'rpg-ancient-paper.jpg';
-		$data['page'] = 'pericias/lista';
+        $data['description'] = 'Aqui você encontra todas as pericias disponíveis para seu personagem!';
+        $data['img'] = 'rpg-ancient-paper.jpg';
+        $data['page'] = 'pericias/lista';
         $data['current_page'] = (NULL !== $this->uri->segment(3)) ? $this->uri->segment(3)/10 : 1;
         $data['total_page'] = $this->db->get('pericias')->num_rows();
         $data['total_page'] = ceil( $data['total_page'] / 20 );
