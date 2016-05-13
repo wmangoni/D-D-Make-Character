@@ -14,7 +14,7 @@ class Races extends CI_Controller {
         $limit = 20;
 		$data['races'] = $this->model_races->get_last_races();
 		$data['sub_title'] = 'Lista de races D&D 3.5';
-        $data['title'] = 'Raças - listagem';
+        $data['title'] = 'Raças :: listagem';
 		$data['description'] = 'Aqui você encontra todas as races disponíveis para seu personagem!';
 		$data['img'] = 'races-rpg.jpg';
         $data['page'] = 'races/lista';
@@ -61,7 +61,7 @@ class Races extends CI_Controller {
         $this->load->library('form_validation');
         $this->load->model('model_classes');
         $data['classes'] = $this->model_classes->get_all_classes();
-        $data['title'] = 'Raças - criar';
+        $data['title'] = 'Raças :: criar';
 		$data['sub_title'] = 'Crie sua Classe';
 		$data['description'] = 'Mas não seja muito apelão, pois o Mestre não gosta!!!';
 		$data['img'] = 'lordsoffallen-rpg-ps4.jpg';
@@ -78,7 +78,7 @@ class Races extends CI_Controller {
 
     	$this->load->helper(array('form'));
         $this->load->library('form_validation');
-		$data['title'] = 'Raça - editar';
+		$data['title'] = 'Raça :: editar';
 		$data['description'] = 'Altere os campos necessários para aprimorar esta raça!!!';
 		$this->load->model('model_classes');
         $data['classes'] = $this->model_classes->get_all_classes();

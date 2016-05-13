@@ -14,6 +14,7 @@ class Classes extends CI_Controller {
         //$this->output->enable_profiler(TRUE);
         $limit = 20;
         $data['classes'] = $this->model_classes->get_classes($limit, $offset);
+        $data['title'] = 'Classes :: Listagem';
         $data['sub_title'] = 'Lista de Classes D&D 3.5';
         $data['description'] = 'Aqui você encontra todas as classes disponíveis para seu personagem!';
         $data['img'] = 'classes-rpg.jpg';
@@ -58,7 +59,7 @@ class Classes extends CI_Controller {
     {
         $this->load->helper(array('form'));
         $this->load->library('form_validation');
-        $data['title'] = 'Classe - criar';
+        $data['title'] = 'Classe :: criar';
 		$data['sub_title'] = 'Crie uma Classe';
 		$data['description'] = 'Mas não seja muito apelão, pois o Mestre não gosta!!!';
 		$data['img'] = 'lordsoffallen-rpg-ps4.jpg';
@@ -75,7 +76,7 @@ class Classes extends CI_Controller {
 
     	$this->load->helper(array('form'));
         $this->load->library('form_validation');
-        $data['title'] = 'Classe - edição';
+        $data['title'] = 'Classe :: editar';
         $data['description'] = 'Altere os campos necessários para mehorar essa classe!!!';
 
         $data['class'] = $this->model_classes->get_classe_by_id($id);

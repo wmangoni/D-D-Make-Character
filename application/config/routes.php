@@ -4,16 +4,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
-$route['home'] = 'home';
-$route['classes'] = 'classes';
-$route['classes/create'] = 'classes/create';
-$route['classes/update'] = 'classes/update';
-$route['races'] = 'races';
-$route['races/create'] = 'races/create';
-$route['races/update'] = 'races/update';
-$route['peicias'] = 'peicias';
-$route['pericias/create'] = 'pericias/create';
-$route['pericias/update'] = 'pericias/update';
+//$route['home'] = 'home';
+//$route['classes'] = 'classes';
+//$route['classes/create'] = 'classes/create';
+//$route['classes/update'] = 'classes/update';
+//$route['races'] = 'races';
+//$route['races/create'] = 'races/create';
+//$route['races/update'] = 'races/update';
+//$route['peicias'] = 'peicias';
+//$route['pericias/create'] = 'pericias/create';
+//$route['pericias/update'] = 'pericias/update';
+//$route['talentos/create'] = 'talentos/create';
 
 /*
 | -------------------------------------------------------------------------
