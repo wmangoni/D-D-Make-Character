@@ -27,7 +27,7 @@ th{background-color: rgba(255,255,255,.8);}
 #link_personagem{background: url("../img/warrior_pixel.png") no-repeat;background-size: 40px;height: 40px;background-position: 0px 0;padding: 10px;text-align: center;}
 img{margin: 0 auto;}
 .ui-group-buttons .glyphicon{color:#FFF;}
-.glyphicon{color:#FFE787;}
+.navbar .glyphicon{color:#FFE787;}
 .sub-td{padding-left: 40px !important;border-bottom: 1px solid #ddd !important;}
 .navbar{background-color: rgba(10,10,40,0.8); height: auto; margin-bottom: 0px;padding-top: 10px;}
 .table{margin-bottom: 0;}

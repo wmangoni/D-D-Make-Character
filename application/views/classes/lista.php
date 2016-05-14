@@ -5,7 +5,7 @@
         <h3 class="panel-title">Busca</h3>
       </div>
       <div class="col col-xs-6 text-right">
-        <a href="<?php echo base_url('classes/create'); ?>"><button type="button" class="btn btn-sm btn-primary btn-create">Create New</button></a>
+        <a href="<?php echo base_url('classes/create'); ?>" class="btn btn-sm btn-default"><span class="glyphicon glyphicon-plus"></span> Novo</a>
       </div>
     </div>
   </div>
