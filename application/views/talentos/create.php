@@ -4,7 +4,7 @@
 		<fieldset>
 
 			<!-- Form Name -->
-			<legend><h2 class="h2"><?php echo (isset($talento) && isset($talento->nome)) ? $talento->nome : 'Nova Raça' ?></h2></legend>
+			<legend><h2 class="h2"><?php echo (isset($talento) && isset($talento->nome)) ? $talento->nome : 'Novo Talento' ?></h2></legend>
 
 			<input type="hidden" name="id" value="<?php echo (isset($talento) && isset($talento->id)) ? $talento->id : '' ?>">
 
@@ -35,12 +35,9 @@
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu pull-right bba_tipo">
-								<li><a href="javascript:void(0)">FOR</a></li>
-								<li><a href="javascript:void(0)">DES</a></li>
-								<li><a href="javascript:void(0)">CON</a></li>
-								<li><a href="javascript:void(0)">INT</a></li>
-								<li><a href="javascript:void(0)">SAB</a></li>
-								<li><a href="javascript:void(0)">CAR</a></li>
+								<?php foreach($tipos_requisito as $key => $tipo_requisito) : ?>
+									<li><a href="javascript:void(0)"><?php echo $tipo_requisito->nome ?></a></li>
+								<?php endforeach; ?>
 							</ul>
 						</div>
 					</div>

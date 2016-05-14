@@ -18,11 +18,6 @@ class Model_classes extends CI_Model {
         parent::__construct();
     }
 
-    public function get_last_classes()
-    {
-        $query = $this->db->get('classes', 20);
-        return $query->result();
-    }
     public function get_classes($limit, $offset)
     {
         $query = $this->db->get('classes', $limit, $offset);

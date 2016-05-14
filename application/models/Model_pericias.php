@@ -26,11 +26,6 @@ class Model_pericias extends CI_Model {
         parent::__construct();
     }
 
-    public function get_last_pericias()
-    {
-        $query = $this->db->get('pericias', 20);
-        return $query->result();
-    }
     public function get_pericias($limit, $offset)
     {
         $query = $this->db->get('pericias', $limit, $offset);
@@ -49,7 +44,6 @@ class Model_pericias extends CI_Model {
 
     public function insert_pericia()
     {
-		$this->id = $_POST['id'];
         $this->nome = $_POST['nome'];
         $this->atributo = $_POST['atributo'];
         $this->sem_treinamento = $_POST['sem_treinamento'];

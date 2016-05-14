@@ -19,9 +19,9 @@ class Model_races extends CI_Model {
         parent::__construct();
     }
 
-    public function get_last_races()
+    public function get_all_races()
     {
-        $query = $this->db->get('races', 20);
+        $query = $this->db->get('races');
         return $query->result();
     }
     public function get_races($limit, $offset)
@@ -37,10 +37,6 @@ class Model_races extends CI_Model {
 
     public function insert_race()
     {
-		//echo '<pre>';
-		//var_dump($_POST);
-		//die('teste');
-        $this->id = $_POST["id"];
         $this->nome = $_POST["nome"];
         $this->bonus = $_POST["bonus"];
         $this->atributo_bonus = $_POST["atributo_bonus"];

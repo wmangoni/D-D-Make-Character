@@ -17,9 +17,9 @@ class Model_talentos extends CI_Model {
         parent::__construct();
     }
 
-    public function get_last_talentos()
+    public function get_all_talentos()
     {
-        $query = $this->db->get('talentos', 20);
+        $query = $this->db->get('talentos');
         return $query->result();
     }
     public function get_talentos($limit, $offset)
@@ -27,12 +27,7 @@ class Model_talentos extends CI_Model {
         $query = $this->db->get('talentos', $limit, $offset);
         return $query->result();
     }
-    public function get_all_talentos()
-    {
-        $query = $this->db->get('talentos');
-        return $query->result();
-    }
-    public function get_pericia_by_id($id){
+    public function get_talento_by_id($id){
         $this->db->select('*');
         $this->db->where('id',$id);
         return $this->db->get('talentos')->result();
@@ -40,13 +35,11 @@ class Model_talentos extends CI_Model {
 
     public function insert_talento()
     {
-		$this->id = $_POST['id'];
         $this->nome = $_POST['nome'];
-        $this->nome = $_POST['$nome;'];
-        $this->tipo = $_POST['$tipo;'];
-        $this->pre_requisito_id = $_POST['$pre_requisito_id;'];
-        $this->beneficio = $_POST['$beneficio;'];
-        $this->normal = $_POST['$normal;'];
+        $this->tipo = $_POST['tipo;'];
+        $this->pre_requisito_id = $_POST['pre_requisito_id;'];
+        $this->beneficio = $_POST['beneficio;'];
+        $this->normal = $_POST['normal;'];
 
         $this->db->insert('talentos', $this);
     }
