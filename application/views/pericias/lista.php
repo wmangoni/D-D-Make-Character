@@ -35,7 +35,7 @@
         <?php foreach($pericias as $key => $pericia) : ?>
           <tr>
             <td class="hidden-xs"><?php echo $pericia->id; ?></td>
-            <td><a data-id="<?php echo $key; ?>" href="javascript:void(0)"><?php echo $pericia->nome; ?></a></td>
+            <td><big data-id="<?php echo $key; ?>"><?php echo $pericia->nome; ?></big></td>
             <td><?php echo $pericia->atributo; ?></td>
             <td><?php echo $pericia->sem_treinamento; ?></td>
             <td><?php echo $pericia->bar; ?></td>
@@ -57,9 +57,10 @@
               </div>
             </td>
           </tr>
-          <tr class="requisitos pericias<?php echo $key; ?>" style="display:none;">
-            <td colspan="7">Pré-requisitos:<br /><?php echo 'description'//$pericia->requisitos; ?></td>
+          <tr class="requisitos classe<?php echo $key; ?>" style="display:none;">
+            <td colspan="16">Pré-requisitos:<br /><?php echo 'description'//$pericia->requisitos; ?></td>
           </tr>
+          <tr style="display: none;"><td></td></tr>
         <?php endforeach; ?>
       </tbody>
     </table>

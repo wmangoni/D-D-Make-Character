@@ -22,7 +22,7 @@ $(document).ready(function() {
 			});
 		},
 		copyHeight: function(){
-			if(window.outerWidth > 800){
+			if(window.outerWidth > 1100){
 				var h = $('#content').height();
 				$('.navbar').height(h);
 			}

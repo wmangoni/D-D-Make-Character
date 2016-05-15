@@ -26,7 +26,7 @@
         <?php foreach($classes as $key => $classe) : ?>
           <tr>
             <td class="hidden-xs hidden-sm"><?php echo $classe->id; ?></td>
-            <td><big data-id="<?php echo $key; ?>" href="javascript:void(0)"><?php echo $classe->nome; ?></big></td>
+            <td><big data-id="<?php echo $key; ?>"><?php echo $classe->nome; ?></big></td>
             <td><?php echo $classe->dv; ?></td>
             <td><?php echo $classe->bba_tipo; ?></td>
             <td><?php echo $classe->tipo; ?></td>

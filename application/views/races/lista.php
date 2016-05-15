@@ -26,7 +26,7 @@
         <?php foreach($races as $key => $races) : ?>
           <tr>
             <td class="hidden-xs"><?php echo $races->id; ?></td>
-              <td><a data-id="<?php echo $key; ?>" href="javascript:void(0)"><?php echo $races->nome; ?></a></td>
+              <td><big data-id="<?php echo $key; ?>"><?php echo $races->nome; ?></big></td>
               <td><?php echo '+'.$races->bonus.' '.$races->atributo_bonus; ?></td>
               <td><?php echo '-'.$races->desvantagem.' '.$races->atributo_desvantagem; ?></td>
               <td><?php echo $races->tamanho; ?></td>
@@ -39,9 +39,10 @@
               </div>
             </td>
           </tr>
-          <tr class="requisitos races<?php echo $key; ?>" style="display:none;">
+          <tr class="requisitos classe<?php echo $key; ?>" style="display:none;">
             <td colspan="7">Pré-requisitos:<br /><?php echo 'description'//$races->requisitos; ?></td>
           </tr>
+          <tr style="display: none;"><td></td></tr>
         <?php endforeach; ?>
       </tbody>
     </table>

@@ -9,10 +9,10 @@ class Races extends CI_Controller {
 		$this->load->model('model_races');
 	}
 
-	public function index()
+	public function index($offset = 0)
 	{
         $limit = 20;
-		$data['races'] = $this->model_races->get_last_races();
+		$data['races'] = $this->model_races->get_races($limit, $offset);
 		$data['sub_title'] = 'Lista de races D&D 3.5';
         $data['title'] = 'Raças :: listagem';
 		$data['description'] = 'Aqui você encontra todas as races disponíveis para seu personagem!';

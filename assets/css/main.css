@@ -59,7 +59,7 @@ img{margin: 0 auto;}
     background-color: rgba(255,255,255,0.7);
 }
 .table-striped>tbody>tr:nth-of-type(even) {
-    background-color: rgba(210,230,255,0.7);
+    background-color: rgba(210,210,210,0.7);
 }
 footer{border: 1px solid transparent;border-radius: 4px;border-color: #ddd; position: absolute; bottom: -13px; width: 100%;background: hsl(248,22%,21%);}
 footer a{color: aliceblue}
