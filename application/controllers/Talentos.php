@@ -20,7 +20,7 @@ class Talentos extends CI_Controller {
 		$data['description'] = 'Aqui você encontra todos os talentos disponíveis para seu personagem!';
 		$data['img'] = 'rpg-ancient-paper.jpg';
 		$data['page'] = 'talentos/lista';
-		$data['current_page'] = (NULL !== $this->uri->segment(3)) ? $this->uri->segment(3)/10 : 1;
+		$data['current_page'] = (NULL !== $this->uri->segment(3)) ? $this->uri->segment(3)/$limit+1 : 1;
 		$data['total_page'] = $this->db->get('talentos')->num_rows();
 		$data['total_page'] = ceil( $data['total_page'] / 20 );
 		//pagination
