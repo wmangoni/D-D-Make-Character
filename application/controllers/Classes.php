@@ -1,12 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Classes extends CI_Controller {
+class Classes extends MY_Controller {
 	public function __construct()
 	{
 		parent::__construct();
 		$data['page_title'] = 'Classes';
 		$this->load->model('model_classes');
+
+        parent::verificaLogin();
 	}
 
 	public function index($offset = 0)

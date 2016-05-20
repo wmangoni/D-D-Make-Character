@@ -1,12 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Pericias extends CI_Controller {
+class Pericias extends MY_Controller {
 	public function __construct()
 	{
 		parent::__construct();
 		$data['page_title'] = 'Perícias';
 		$this->load->model('model_pericias');
+
+        parent::verificaLogin();
 	}
 
 	public function index($offset = 0)

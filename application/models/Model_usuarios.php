@@ -1,20 +1,22 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Membership_model extends CI_Model {
+class Model_usuarios extends CI_Model {
 	# VALIDA USUÁRIO
 	function validate() {
 
-		$this->db->where('username', $this->input->post('username'));
-		$this->db->where('password', md5($this->input->post('password')));
+		$this->db->where('email', $this->input->post('email'));
+		$this->db->where('senha', md5($this->input->post('senha')));
 		$this->db->where('status', 1);
 
 		// Verifica o status do usuário
-		$query = $this->db->get('membership');
+		$query = $this->db->get('usuarios');
 
-		if ($query->num_rows == 1) {
+		if ($query->num_rows() == 1) {
 			return true;
 			// RETORNA VERDADEIRO
+		} else {
+			return false;
 		}
 	}
 	

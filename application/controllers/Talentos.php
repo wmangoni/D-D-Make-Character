@@ -1,13 +1,15 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Talentos extends CI_Controller {
+class Talentos extends MY_Controller {
 	public function __construct()
 	{
 		parent::__construct();
 		$data['page_title'] = 'Talentos';
 		$this->load->model('model_talentos');
 		$this->load->model('model_tipo_requisito');
+
+		parent::verificaLogin();
 	}
 
 	public function index($offset = 0)

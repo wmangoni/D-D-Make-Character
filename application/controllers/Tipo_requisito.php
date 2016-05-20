@@ -1,12 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Tipo_requisito extends CI_Controller {
+class Tipo_requisito extends MY_Controller {
 	public function __construct()
 	{
 		parent::__construct();
 		$data['page_title'] = 'Tipos de requisitos';
 		$this->load->model('model_tipo_requisito');
+
+        parent::verificaLogin();
 	}
 
 	public function index($offset = 0)

@@ -1,12 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Races extends CI_Controller {
+class Races extends MY_Controller {
 	public function __construct()
 	{
 		parent::__construct();
 		$data['page_title'] = 'races';
 		$this->load->model('model_races');
+
+        parent::verificaLogin();
 	}
 
 	public function index($offset = 0)
