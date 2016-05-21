@@ -14,10 +14,8 @@ $title_page = $_SERVER["REQUEST_URI"];
     <link href="<?php echo base_url('assets/css/login.css'); ?>" rel="stylesheet" type="text/css"></link>
 </head>
 <body>
-<div class="row">
-    <div class="col-md-12" id="container">
-
-        <div class="container" style="height: 97vh;">
+    <div class="row col-md-12" id="container">
+        <div class="container" style="height: 100vh;">
             <div class="row">
                 <div class="col-md-12">
                     <div class="wrap"><?php echo validation_errors(); ?></div>
@@ -76,7 +74,6 @@ $title_page = $_SERVER["REQUEST_URI"];
              </div>
         </footer>
     </div><!--FECHA ID CONTAINER-->
-</div><!--FECHA CLASS ROW-->
 <script src="https://code.jquery.com/jquery-2.2.2.min.js" integrity="sha256-36cp2Co+/62rEAAYHLmRCPIych47CvdM+uTBJwSzWjI=" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 <script src="<?php echo base_url('assets/js/main.js') ?>"></script>

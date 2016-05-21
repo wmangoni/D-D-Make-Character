@@ -1,5 +1,5 @@
 body{
-    background: url('http://farm3.staticflickr.com/2832/12303719364_c25cecdc28_b.jpg') fixed;
+    background: url('../img/dark-cubes-glow-computer-graphics-free.jpg') fixed;
     background-size: cover;
     padding: 0;
     margin: 0;
@@ -152,13 +152,13 @@ form.login a:hover{
 }
 .posted-by{
     position: absolute;
-    bottom: 26px;
+    bottom: 47px;
     margin: 0 auto;
     color: #FFF;
     background-color: rgba(0, 0, 0, 0.66);
     padding: 10px;
     left: 45%;
 }
-footer{border: 1px solid transparent;border-radius: 4px;border-color: #ddd; position: absolute; bottom: -13px; width: 100%;background: hsl(248,22%,21%);}
+footer{border: 1px solid transparent;border-radius: 4px;border-color: #ddd; position: absolute; bottom: 0px; width: 100%;}
 footer a{color: aliceblue}
 .error{text-align: center;color: red;}
