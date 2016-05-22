@@ -24,7 +24,7 @@ $(document).ready(function() {
 		copyHeight: function(){
 			if(window.outerWidth > 1100){
 				var h = $('#content').height();
-				$('.navbar').height(h);
+				$('.nav-lateral').height(h);
 			}
 		},
 		resetSenha: function(){
@@ -37,10 +37,33 @@ $(document).ready(function() {
 					$(".pr-wrap").removeClass("show-pass-reset");
 				}); 
 			});
-		}
+		},
+		barsChart: function(){
+			barChart();
+
+			$(window).resize(function(){
+				barChart();
+			});
+
+			function barChart(){
+				$('.bar-chart').find('.item-progress').each(function(){
+					var itemProgress = $(this),
+					itemProgressWidth = $(this).parent().width() * ($(this).data('percent') / 100);
+					itemProgress.css('width', itemProgressWidth);
+				});
+			};
+		},
 	}
+
+
 	base.dropFunction();
 	base.requisitosToogle();
 	base.copyHeight();
+
+	$(window).resize(function(){
+		base.copyHeight();
+	});
+
 	base.resetSenha();
+	base.barsChart();
 });

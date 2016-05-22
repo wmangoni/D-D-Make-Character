@@ -11,7 +11,8 @@ class Home extends MY_Controller {
 	public function index()
 	{
 		$data['page_title'] = 'Home';
-		$data['title'] = 'Bem vindo ao Sistema de cadastro de Personagens de RPG (D&D)!';
+		$data['title'] = 'Bem vindo ao D&D Make Character!';
+		$data['sub_title'] = 'Home';
 		$data['page'] = 'home';
 
 		$this->load->view('master', $data);

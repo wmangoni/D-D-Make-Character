@@ -1,10 +1,10 @@
-<div class="col-md-3 col-lg-2 navbar">
+<div class="col-md-3 col-lg-2 navbar nav-lateral">
 	<img class="img-responsive img-thumbnail" src="<?php echo (isset($img)) ? base_url("assets/img/{$img}") : base_url("assets/img/fate-ficha-e-dados.jpg"); ?>" title="O melhor do RPG">
 	<div class="panel-group" id="accordion">
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h4 class="panel-title">
-					<a href="<?php echo base_url() ?>">
+					<a href="<?php echo base_url('home') ?>">
 						<span class="glyphicon glyphicon-home"></span> Home
 					</a>
 				</h4>
