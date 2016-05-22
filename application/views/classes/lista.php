@@ -43,6 +43,7 @@
           <tr class="requisitos classe<?php echo $key; ?>" style="display:none;">
             <td colspan="7">Pré-requisitos:<br /><?php echo $classe->requisitos; ?></td>
           </tr>
+          <tr style="display: none;"><td></td></tr>
         <?php endforeach; ?>
       </tbody>
     </table>

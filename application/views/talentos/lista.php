@@ -42,6 +42,7 @@
 					<tr class="requisitos talento<?php echo $key; ?>" style="display:none;">
 						<td colspan="7">Pré-requisitos:<br /><?php echo 'description'//$talento->requisitos; ?></td>
 					</tr>
+					<tr style="display: none;"><td></td></tr>
 				<?php endforeach; ?>
 			</tbody>
 		</table>
