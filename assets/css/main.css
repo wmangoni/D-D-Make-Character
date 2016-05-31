@@ -1,7 +1,7 @@
 /*
 * NORMALIZER
 */
-h1, h2, h3, h4, h5, h6, a, .panel-default>.panel-heading, .fa, .navbar-default .navbar-brand,.ui-group-buttons .glyphicon, .navbar .glyphicon{color: #FFF;}
+h1, h2, h3, h4, h5, h6, a, .panel-default>.panel-heading, .fa, .navbar-default .navbar-brand,.ui-group-buttons .glyphicon, .navbar .glyphicon, .navbar .fa{color: #FFF;}
 
 ::selection { background-color: #E13300; color: white; }
 ::-moz-selection { background-color: #E13300; color: white;}
@@ -30,8 +30,9 @@ img{margin: 0 auto;}
 #container{background: rgba(255,255,255,0.4);border: 0px solid #f1f1f1;}
 #content{min-height: 100vh;position: relative;padding-right: 0px;padding-left: 0px;}
 #link_personagem{background: url("../img/warrior_pixel.png") no-repeat;background-size: 40px;height: 40px;background-position: 0px 0;padding: 10px;text-align: center;}
-.sub-td{padding-left: 40px !important;border-bottom: 1px solid #ddd !important;}
+.sub-td{padding-left: 40px !important;border: 0px solid #ddd !important;}
 .navbar{background-color: rgba(10,10,40,0.8); height: auto; margin-bottom: 0px;padding-top: 10px;}
+.navbar .panel .panel-body{border: 0px solid !important;}
 .table{margin-bottom: 0;}
 .table td big{cursor: pointer; color: #337AB7; text-decoration: underline;}
 

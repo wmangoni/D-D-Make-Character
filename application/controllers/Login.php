@@ -15,7 +15,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 		
 			// MODELO MEMBERSHIP
-			$this->load->model('model_usuarios', 'usuarios');
+			$this->load->model('model_auth', 'usuarios');
 			$query = $this->usuarios->validate();
 
 			if ($this->form_validation->run() == FALSE) {
