@@ -15,9 +15,9 @@ class Usuarios extends MY_Controller {
 	{
         $limit = 20;
 		$data['usuarios'] = $this->model_usuarios->get_usuarios($limit, $offset);
-		$data['sub_title'] = 'Lista de usuarios D&D 3.5';
-        $data['title'] = 'Raças :: listagem';
-		$data['description'] = 'Aqui você encontra todas as usuarios disponíveis para seu personagem!';
+		$data['sub_title'] = 'Usuários';
+        $data['title'] = 'Usuários :: listagem';
+		$data['description'] = 'Aqui você encontra todas os usuarios disponíveis para seu personagem!';
 		$data['img'] = 'usuarios-rpg.jpg';
         $data['page'] = 'usuarios/lista';
         //pagination
