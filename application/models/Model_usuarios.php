@@ -31,7 +31,7 @@ class Model_usuarios extends CI_Model {
         //asdfasdfsa
     }
     public function setEmail($email){
-        if (filter_var($email, FILTER_VALIDATE_EMAIL) {
+        if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
             $this->email = $email;
         } else {
             $this->setValidation("Email inválido");
@@ -93,7 +93,7 @@ class Model_usuarios extends CI_Model {
         }
 
         if(isset($email)){
-            $this->setSetEmail($email)
+            $this->setSetEmail($email);
         }
 
         if(isset($nasc)){

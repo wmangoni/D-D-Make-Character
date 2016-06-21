@@ -54,14 +54,14 @@ class Usuarios extends MY_Controller {
         $this->pagination->initialize($config);
         
         $data['pagination'] = $this->pagination->create_links();
-        $this->load->view('master', $data);
+        $this->parser->parse('master', $data);
 	}
 
 	public function create()
     {
         $this->load->helper(array('form'));
         $this->load->library('form_validation');
-        $this->load->model('model_classes');
+        $this->load->model('model_usuarios');
         $data['classes'] = $this->model_classes->get_all_classes();
         $data['title'] = 'Raças :: criar';
 		$data['sub_title'] = 'Crie sua Classe';
@@ -74,7 +74,7 @@ class Usuarios extends MY_Controller {
         } else {
             $data['page'] = 'usuarios/create/ok';
         }
-        $this->load->view('master', $data);
+        $this->parser->parse('master', $data);
     }
     public function edit( $id ){
 
@@ -82,12 +82,12 @@ class Usuarios extends MY_Controller {
         $this->load->library('form_validation');
 		$data['title'] = 'Raça :: editar';
 		$data['description'] = 'Altere os campos necessários para aprimorar esta raça!!!';
-		$this->load->model('model_classes');
+		$this->load->model('model_usuarios');
         $data['classes'] = $this->model_classes->get_all_classes();
 
-        $data['race'] = $this->model_usuarios->get_classe_by_id($id);
+        $data['usuarios'] = $this->model_usuarios->get_usuario_by_id($id);
 
-        if($data['race']){
+        if($data['usuarios']){
 	        if ($this->form_validation->run() == FALSE) {
 	            $data['page'] = 'usuarios/create';
             } else {
@@ -96,11 +96,11 @@ class Usuarios extends MY_Controller {
         } else {
         	$this->index();
         }
-        $this->load->view('master', $data);
+        $this->parser->parse('master', $data);
 
     }
     public function update(){
-        $this->model_usuarios->update_race();
+        $this->model_usuarios->update_usuarios();
         redirect('/usuarios');
     }
     public function insert(){

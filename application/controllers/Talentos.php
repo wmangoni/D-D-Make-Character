@@ -56,7 +56,7 @@ class Talentos extends MY_Controller {
 		
 		$data['pagination'] = $this->pagination->create_links();
 
-		$this->load->view('master', $data);
+		$this->parser->parse('master', $data);
 	}
 
 	public function create()

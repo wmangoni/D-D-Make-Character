@@ -24,7 +24,7 @@
         </div>
       </div>
       <div class="col col-xs-6 text-right">
-        <a href="<?php echo base_url('races/create'); ?>"><button type="button" class="btn btn-sm btn-primary btn-create">Create New</button></a>
+        <a href="<?php echo base_url('usuarios/create'); ?>"><button type="button" class="btn btn-sm btn-primary btn-create">Create New</button></a>
       </div>
     </div>
   </div>
@@ -42,27 +42,27 @@
         </tr>
       </thead>
       <tbody>
-        <?php foreach($races as $key => $races) : ?>
+        {usuarios}
           <tr>
-            <td class="hidden-xs"><?php echo $races->id; ?></td>
-              <td><big data-id="<?php echo $key; ?>"><?php echo $races->nome; ?></big></td>
-              <td><?php echo '+'.$races->bonus.' '.$races->atributo_bonus; ?></td>
-              <td><?php echo '-'.$races->desvantagem.' '.$races->atributo_desvantagem; ?></td>
-              <td><?php echo $races->tamanho; ?></td>
-              <td><?php echo $races->classe_favorecida; ?></td>
+            <td class="hidden-xs">{id}</td>
+              <td><big data-id="{key}">{nome}</big></td>
+              <td>{email}</td>
+              <td>{nasc}</td>
+              <td>{created_at}</td>
+              <td>{updated_at}</td>
             <td align="center">
               <div class="ui-group-buttons">
-                <a href="<?php echo base_url('races/edit').'/'.$races->id; ?>" class="btn btn-success" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
+                <a href="<?php echo base_url('usuarios/edit').'/'; ?>{id}" class="btn btn-success" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
                 <div class="or"></div>
-                <a href="<?php echo base_url('races/drop').'/'.$races->id ?>" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
+                <a href="<?php echo base_url('usuarios/drop').'/'; ?>{id}" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
               </div>
             </td>
           </tr>
-          <tr class="requisitos classe<?php echo $key; ?>" style="display:none;">
-            <td colspan="7">Pré-requisitos:<br /><?php echo 'description'//$races->requisitos; ?></td>
+          <tr class="requisitos classe{key}" style="display:none;">
+            <td colspan="7">Pré-requisitos:<br /><?php echo 'description'//$usuarios->requisitos; ?></td>
           </tr>
           <tr style="display: none;"><td></td></tr>
-        <?php endforeach; ?>
+        {/usuarios}
       </tbody>
     </table>
   </div>

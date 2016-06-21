@@ -42,27 +42,27 @@
 				</tr>
 			</thead>
 			<tbody>
-				<?php foreach($talentos as $key => $talento) : ?>
+				{talentos}
 					<tr>
-						<td class="hidden-xs"><?php echo $talento->id; ?></td>
-						<td><a data-id="<?php echo $key; ?>" href="javascript:void(0)"><?php echo $talento->nome; ?></a></td>
-						<td><?php echo $talento->tipo; ?></td>
-						<td><?php echo $talento->pre_requisito_id; ?></td>
-						<td><?php echo $talento->beneficio; ?></td>
-						<td><?php echo $talento->normal; ?></td>
+						<td class="hidden-xs">{id}</td>
+						<td><a data-id="{key}" href="javascript:void(0)">{nome}</a></td>
+						<td>{tipo}</td>
+						<td>{pre_requisito_id}</td>
+						<td>{beneficio}</td>
+						<td>{normal}</td>
 						<td align="center">
 							<div class="ui-group-buttons">
-								<a href="<?php echo base_url('talentos/edit').'/'.$talento->id; ?>" class="btn btn-success" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
+								<a href="<?php echo base_url('talentos/edit').'/'; ?>{id}" class="btn btn-success" role="button"><span class="glyphicon glyphicon-pencil"></span></a>
 								<div class="or"></div>
-								<a href="<?php echo base_url('talentos/drop').'/'.$talento->id ?>" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
+								<a href="<?php echo base_url('talentos/drop').'/'; ?>{id}" class="btn btn-danger" role="button"><span class="glyphicon glyphicon-trash"></span></a>
 							</div>
 						</td>
 					</tr>
-					<tr class="requisitos talento<?php echo $key; ?>" style="display:none;">
+					<tr class="requisitos talento{key}" style="display:none;">
 						<td colspan="7">Pré-requisitos:<br /><?php echo 'description'//$talento->requisitos; ?></td>
 					</tr>
 					<tr style="display: none;"><td></td></tr>
-				<?php endforeach; ?>
+				{/talentos}
 			</tbody>
 		</table>
 	</div>
