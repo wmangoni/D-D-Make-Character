@@ -25,7 +25,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 
 $s = $_SERVER['HTTP_HOST'];
-$config['base_url'] = 'http://'.$s.'/D-D-Make-Character';
+$config['base_url'] = 'http://make-d-d-character.herokuapp.com/';
 
 /*
 |--------------------------------------------------------------------------
