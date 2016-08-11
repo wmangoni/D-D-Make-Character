@@ -24,22 +24,26 @@ class Model_talentos extends CI_Model {
     }
     public function get_talentos($limit, $offset)
     {
-        $query = $this->db->get('talentos', $limit, $offset);
+        $query = $this->db->order_by('nome', 'ASC')->get('talentos', $limit, $offset);
         return $query->result();
     }
-    public function get_talento_by_id($id){
+    public function get_talento_by_id($id) {
         $this->db->select('*');
         $this->db->where('id',$id);
         return $this->db->get('talentos')->result();
     }
 
+    public function get_by($tabela, $coluna, $termo) {
+        return $this->db->where($coluna, $termo)->get($tabela);
+    }
+
     public function insert_talento()
     {
         $this->nome = $_POST['nome'];
-        $this->tipo = $_POST['tipo;'];
-        $this->pre_requisito_id = $_POST['pre_requisito_id;'];
-        $this->beneficio = $_POST['beneficio;'];
-        $this->normal = $_POST['normal;'];
+        $this->tipo = $_POST['tipo'];
+        $this->pre_requisito_id = $_POST['pre_requisito_id'];
+        $this->beneficio = $_POST['beneficio'];
+        $this->normal = $_POST['normal'];
 
         $this->db->insert('talentos', $this);
     }
@@ -67,17 +71,29 @@ class Model_talentos extends CI_Model {
 
         $this->db->update('talentos', $this, array('id' => $_POST['id']));
     }
-    public function total_rows(){
+    public function total_rows() {
         return $this->db->count_all('talentos');
     }
-    public function drop($id){
+    public function drop($id) {
         $this->db->where('id', $id);
         $this->db->delete('talentos');
     }
-    public function update($id, $dados){
+    public function update($id, $dados) {
         $this->db->set($dados);
         $this->db->where('id', $id);
         $this->db->update('talentos'); // gives UPDATE pericias SET field = field+1 WHERE id = 2
+    }
+
+    public function lista_colunas() {
+
+        $fields = $this->db->list_fields('talentos');
+
+        foreach ($fields as $field)
+        {
+                $colunas[] = $field;
+        }
+
+        return $colunas;
     }
 
 }

@@ -21,8 +21,8 @@
 			<div class="form-group">
 
 				<div class="col-md-3 col-md-offset-3">
-					<label class="control-label" for="tipo">Tipo</label>
-					<input id="tipo" name="tipo" type="text" placeholder="tipo de atributo" class="form-control input-md" value="<?php echo (isset($talento) && isset($talento->tipo)) ? $talento->tipo : '' ?>">
+					<label class="control-label" for="tipo">Tipo de talento</label>
+					<input id="tipo" name="tipo" type="text" placeholder="Ex: Divino, Normal, etc..." class="form-control input-md" value="<?php echo (isset($talento) && isset($talento->tipo)) ? $talento->tipo : '' ?>">
 				</div>
 
 				<div class="col-md-3">

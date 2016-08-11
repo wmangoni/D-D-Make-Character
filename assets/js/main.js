@@ -53,6 +53,13 @@ $(document).ready(function() {
 				});
 			};
 		},
+		buscaPorCampos: function(){
+			$(document).on('click', '.busca-anchor', function(){
+				var field = $(this).data('field');
+				$('#search_concept').text('Search by: '+field.toUpperCase().replace('_', ' '));
+				$('input[name="search_param"]').val(field);
+			});
+		}
 	}
 
 
@@ -66,4 +73,5 @@ $(document).ready(function() {
 
 	base.resetSenha();
 	base.barsChart();
+	base.buscaPorCampos();
 });

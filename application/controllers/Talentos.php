@@ -22,6 +22,8 @@ class Talentos extends MY_Controller {
 		$data['description'] = 'Aqui você encontra todos os talentos disponíveis para seu personagem!';
 		$data['img'] = 'rpg-ancient-paper.jpg';
 		$data['page'] = 'talentos/lista';
+		$data['colunas'] = $this->lista_colunas();
+
 		$data['current_page'] = (NULL !== $this->uri->segment(3)) ? $this->uri->segment(3)/$limit+1 : 1;
 		$data['total_page'] = $this->db->get('talentos')->num_rows();
 		$data['total_page'] = ceil( $data['total_page'] / 20 );
@@ -113,5 +115,18 @@ class Talentos extends MY_Controller {
 		}
 
 		redirect('/talentos');
+	}
+	public function get_by($coluna, $termo) {
+		$data['talentos'] = Parent::busca('talentos', $coluna, $termo);
+		$data['sub_title'] = 'Lista de talentos D&D 3.5';
+		$data['title'] = 'Talentos :: listagem';
+		$data['description'] = 'Aqui você encontra todos os talentos disponíveis para seu personagem!';
+		$data['img'] = 'rpg-ancient-paper.jpg';
+		$data['page'] = 'talentos/lista';
+		$this->parser->parse('master', $data);
+	}
+
+	public function lista_colunas(){
+		return $this->model_talentos->lista_colunas();
 	}
 }
