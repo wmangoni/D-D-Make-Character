@@ -19,7 +19,8 @@ class MY_Controller extends CI_Controller {
 
 	public function busca($tabela, $coluna, $termo) {
 		if ($this->db->table_exists($tabela)) {
-			$this->load->model($tabela);
+			$model = 'Model_'.$tabela;
+			$this->load->model($model);
 			$this->$tabela->get_by($tabela, $coluna, $termo);
 		}
 	}

@@ -33,8 +33,8 @@ class Model_talentos extends CI_Model {
         return $this->db->get('talentos')->result();
     }
 
-    public function get_by($tabela, $coluna, $termo) {
-        return $this->db->where($coluna, $termo)->get($tabela);
+    public function get_by($tabela, $field, $termo) {
+        return $this->db->where($field, $termo)->get($tabela);
     }
 
     public function insert_talento()
