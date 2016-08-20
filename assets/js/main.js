@@ -57,7 +57,17 @@ $(document).ready(function() {
 			$(document).on('click', '.busca-anchor', function(){
 				var field = $(this).data('field');
 				$('#search_concept').text('Search by: '+field.toUpperCase().replace('_', ' '));
-				$('input[name="search_param"]').val(field);
+				$('input#search_param').val(field);
+			});
+		},
+		showModal: function(){
+			$('#click').on('click', function() {
+
+				var src = $('.navbar img').attr('src');
+				console.log(src);
+				$('#myModal img').attr('src', src);
+				$('#myModal').modal('show');
+
 			});
 		}
 	}
@@ -74,4 +84,5 @@ $(document).ready(function() {
 	base.resetSenha();
 	base.barsChart();
 	base.buscaPorCampos();
+	base.showModal();
 });
