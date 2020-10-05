@@ -274,11 +274,11 @@ class CI_Session {
 		isset($params['cookie_name']) OR $params['cookie_name'] = config_item('sess_cookie_name');
 		if (empty($params['cookie_name']))
 		{
-			$params['cookie_name'] = ini_get('session.name');
+			$params['cookie_name'] = ini_get('session.id');
 		}
 		else
 		{
-			ini_set('session.name', $params['cookie_name']);
+			ini_set('session.id', $params['cookie_name']);
 		}
 
 		isset($params['cookie_path']) OR $params['cookie_path'] = config_item('cookie_path');

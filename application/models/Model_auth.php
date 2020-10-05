@@ -9,12 +9,12 @@ class Model_auth extends CI_Model {
 		$this->db->where('senha', md5($this->input->post('senha')));
 		$this->db->where('status', 1);
 
+
 		// Verifica o status do usuário
 		$query = $this->db->get('usuarios');
 
-		if ($query->num_rows() == 1) {
+		if ($query->num_rows() >= 1) {
 			return true;
-			// RETORNA VERDADEIRO
 		} else {
 			return false;
 		}
@@ -26,11 +26,8 @@ class Model_auth extends CI_Model {
 		$logged = $this->session->userdata('logged');
 
 		if (!isset($logged) || $logged != true) {
-
 			echo 'Voce nao tem permissao para entrar nessa pagina. Efetuar Login';
-
 			die();
-
 		}
 	}
 }

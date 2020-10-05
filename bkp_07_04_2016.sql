@@ -479,11 +479,12 @@ INSERT  INTO `talentos`(`id`,`nome`,`tipo`,`pre_requisito_id`,`beneficio`,`norma
 
 /*Table structure for table `usuario` */
 
-CREATE TABLE `usuario` (
+CREATE TABLE `usuarios` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `senha` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `status` INT(2),
   `created_at` DATE NOT NULL,
   `updated_at` DATE NOT NULL,
   `remember_token` VARCHAR(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
