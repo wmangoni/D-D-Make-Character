@@ -160,9 +160,9 @@ INSERT  INTO `pericias`(`id`,`nome`,`atributo`,`sem_treinamento`,`bar`,`bad`,`cl
 INSERT  INTO `pericias`(`id`,`nome`,`atributo`,`sem_treinamento`,`bar`,`bad`,`cle`,`dru`,`gue`,`mon`,`pal`,`ran`,`lad`,`fei`,`mag`) VALUES (44,'Usar Cordas','DES','S',0,0,0,0,0,0,0,1,1,0,0);
 INSERT  INTO `pericias`(`id`,`nome`,`atributo`,`sem_treinamento`,`bar`,`bad`,`cle`,`dru`,`gue`,`mon`,`pal`,`ran`,`lad`,`fei`,`mag`) VALUES (45,'Usar Intrumento Mágico','CAR','N',0,1,0,0,0,0,0,0,1,0,0);
 
-/*Table structure for table `personagem` */
+/*Table structure for table `personagens` */
 
-CREATE TABLE `personagem` (
+CREATE TABLE `personagens` (
   `id` INT(11) NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `race_id` INT(2) DEFAULT NULL,
@@ -493,8 +493,14 @@ CREATE TABLE `usuarios` (
 
 /*Data for the table `usuario` */
 
-INSERT  INTO `usuario`(`id`,`nome`,`email`,`senha`,`created_at`,`updated_at`,`remember_token`) VALUES (1,'William Richard Mangoni','willrpg@hotmail.com','a7ad924c22dc0819bb480953fcffad1c','2016-04-05','0000-00-00',NULL);
+INSERT  INTO `usuarios`(`id`,`nome`,`email`,`senha`,`status`,`created_at`,`updated_at`,`remember_token`) VALUES (1,'William Richard Mangoni','willrpg@hotmail.com','a7ad924c22dc0819bb480953fcffad1c',1,'2016-04-05','0000-00-00',NULL);
 
+
+CREATE TABLE `tipo_requisito` (
+  `id` INT(9) NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;

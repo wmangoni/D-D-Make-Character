@@ -13,7 +13,7 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h4 class="panel-title">
-					<a href="<?php echo base_url() ?>">
+					<a href="<?php echo base_url('personagens') ?>">
 						<span class="glyphicon glyphicon-user"></span> Personagens
 					</a>
 				</h4>
