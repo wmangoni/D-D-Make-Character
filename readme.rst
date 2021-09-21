@@ -59,6 +59,7 @@ Resources
 -  `Community Wiki <https://github.com/bcit-ci/CodeIgniter/wiki>`_
 -  `Community IRC <https://webchat.freenode.net/?channels=%23codeigniter>`_
 
+
 Report security issues to our `Security Panel <mailto:security@codeigniter.com>`_
 or via our `page on HackerOne <https://hackerone.com/codeigniter>`_, thank you.
 
