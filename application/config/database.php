@@ -75,10 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => 'localhost',
-	'username' => 'root',
-	'password' => '',
-	'database' => 'ded',
+	'hostname' => $_SERVER['SERVER_NAME'] == 'localhost' ) ? 'localhost' : 'nnsgluut5mye50or.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+	'username' => $_SERVER['SERVER_NAME'] == 'localhost' ) ? 'root': 'p7tms350klq0kzpx',
+	'password' => $_SERVER['SERVER_NAME'] == 'localhost' ) ? '': 'r935tehu9ikmlsbr',
+	'database' => $_SERVER['SERVER_NAME'] == 'localhost' ) ? 'ded': 'kyhxfas90wlpf8jh',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
