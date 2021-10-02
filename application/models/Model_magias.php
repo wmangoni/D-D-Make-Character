@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Model_races extends CI_Model {
+class Model_magias extends CI_Model {
 
     public $id;
     public $nome;
@@ -18,23 +18,23 @@ class Model_races extends CI_Model {
         parent::__construct();
     }
 
-    public function get_all_races() {
-        $query = $this->db->get('races');
+    public function get_all_magias() {
+        $query = $this->db->get('magias');
         return $query->result();
     }
 
-    public function get_races($limit, $offset) {
-        $query = $this->db->get('races', $limit, $offset);
+    public function get_magias($limit, $offset) {
+        $query = $this->db->get('magias', $limit, $offset);
         return $query->result();
     }
 
     public function get_classe_by_id($id) {
         $this->db->select('*');
         $this->db->where('id',$id);
-        return $this->db->get('races')->result();
+        return $this->db->get('magias')->result();
     }
 
-    public function insert_race() {
+    public function insert_magia() {
         $this->nome = $_POST["nome"];
         $this->bonus = $_POST["bonus"];
         $this->atributo_bonus = $_POST["atributo_bonus"];
@@ -43,10 +43,10 @@ class Model_races extends CI_Model {
         $this->tamanho = $_POST["tamanho"];
         $this->classe_favorecida = $this->get_classe_id($_POST["classe_favorecida"]);
 
-        $this->db->insert('races', $this);
+        $this->db->insert('magias', $this);
     }
 
-    public function update_race() {
+    public function update_magia() {
 
         if(isset($_POST["id"])){
             $this->id = $_POST["id"];
@@ -80,22 +80,22 @@ class Model_races extends CI_Model {
             $this->classe_favorecida = $this->get_classe_id($_POST["classe_favorecida"]);
         }
 
-        $this->db->update('races', $this, array('id' => $_POST['id']));
+        $this->db->update('magias', $this, array('id' => $_POST['id']));
     }
 
     public function total_rows() {
-        return $this->db->count_all('races');
+        return $this->db->count_all('magias');
     }
 
     public function drop($id) {
         $this->db->where('id', $id);
-        $this->db->delete('races');
+        $this->db->delete('magias');
     }
 
     public function update($id, $dados) {
         $this->db->set($dados);
         $this->db->where('id', $id);
-        $this->db->update('races'); // gives UPDATE races SET field = field+1 WHERE id = 2
+        $this->db->update('magias'); // gives UPDATE magias SET field = field+1 WHERE id = 2
     }
 
     private function get_classe_id($classe_name) {

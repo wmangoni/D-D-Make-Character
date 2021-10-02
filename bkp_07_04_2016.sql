@@ -72,7 +72,7 @@ INSERT  INTO `classes`(`id`,`nome`,`dv`,`bba_tipo`,`resistencia`,`tipo`,`requisi
 
 /*Table structure for table `magias` */
 
-CREATE TABLE `magias` (
+CREATE TABLE `magias_classes` (
   `id` INT(9) NOT NULL,
   `bar` VARCHAR(40) COLLATE utf8mb4_unicode_ci NOT NULL,
   `bad` VARCHAR(40) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -501,6 +501,25 @@ CREATE TABLE `tipo_requisito` (
   `nome` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+
+CREATE TABLE `magias` (
+  `id` INT(9) NOT NULL AUTO_INCREMENT,
+  `nivel` INT(3) NOT NULL,
+  `nome` VARCHAR(50)  COLLATE utf8mb4_unicode_ci  NOT NULL,
+  `descricao` VARCHAR(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `escola` VARCHAR(50)  COLLATE utf8mb4_unicode_ci  NOT NULL,
+  `componentes` VARCHAR(50)  COLLATE utf8mb4_unicode_ci  NOT NULL,
+  `tempo_execusao` VARCHAR(50)  COLLATE utf8mb4_unicode_ci  NOT NULL,
+  `alcance` VARCHAR(50)  COLLATE utf8mb4_unicode_ci  NOT NULL,
+  `alvo_efeito_area` VARCHAR(50)  COLLATE utf8mb4_unicode_ci  NOT NULL,
+  `duracao` VARCHAR(50)  COLLATE utf8mb4_unicode_ci  NOT NULL,
+  `tr` VARCHAR(50)  COLLATE utf8mb4_unicode_ci DEFAULT " - ",
+  `rm` VARCHAR(50)  COLLATE utf8mb4_unicode_ci DEFAULT " - ",
+  `material_foco` VARCHAR(50)  COLLATE utf8mb4_unicode_ci DEFAULT " - ",
+  PRIMARY KEY (`id`)
+) ENGINE=INNODB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;

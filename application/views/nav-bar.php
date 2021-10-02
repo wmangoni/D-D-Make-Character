@@ -13,7 +13,7 @@
 		<div class="panel panel-default">
 			<div class="panel-heading">
 				<h4 class="panel-title">
-					<a href="<?php echo base_url('personagens') ?>">
+					<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
 						<span class="glyphicon glyphicon-user"></span> Personagens
 					</a>
 				</h4>
@@ -23,12 +23,12 @@
 					<table class="table">
 						<tr>
 							<td class="sub-td">
-								<span class="glyphicon glyphicon-list-alt"></span><a href="#"> Listar</a>
+								<span class="glyphicon glyphicon-list-alt"></span><a href="<?php echo base_url('personagens') ?>"> Listar</a>
 							</td>
 						</tr>
 						<tr>
 							<td class="sub-td">
-								<span class="glyphicon glyphicon-plus"></span><a href="#"> Cadastrar</a>
+								<span class="glyphicon glyphicon-plus"></span><a href="<?php echo base_url('personagens/create') ?>"> Cadastrar</a>
 							</td>
 						</tr>
 					</table>
@@ -81,7 +81,7 @@
 								<span class="glyphicon glyphicon-plus"></span><a href="<?php echo base_url('talentos/create') ?>"> Cadastrar</a>
 							</td>
 						</tr>
-						<tr>
+						<!-- <tr>
 							<td class="sub-td">
 								<a href="#">Notifications</a> <span class="label label-info">5</span>
 							</td>
@@ -90,7 +90,7 @@
 							<td class="sub-td">
 								<span class="glyphicon glyphicon-download"></span><a href="#"> Exportar</a>
 							</td>
-						</tr>
+						</tr> -->
 					</table>
 				</div>
 			</div>
@@ -158,12 +158,12 @@
 					<table class="table">
 						<tr>
 							<td class="sub-td">
-								<span class="glyphicon glyphicon-list-alt"></span><a href="#"> Listar</a>
+								<span class="glyphicon glyphicon-list-alt"></span><a href="<?php echo base_url('magias') ?>"> Listar</a>
 							</td>
 						</tr>
 						<tr>
 							<td class="sub-td">
-								<span class="glyphicon glyphicon-plus"></span><a href="#"> Cadastrar</a>
+								<span class="glyphicon glyphicon-plus"></span><a href="<?php echo base_url('magias/create') ?>"> Cadastrar</a>
 							</td>
 						</tr>
 					</table>
