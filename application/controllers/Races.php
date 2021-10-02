@@ -105,7 +105,7 @@ class Races extends MY_Controller {
     }
     public function insert(){
     	//Model races já é carregado no construtor
-		$this->model_races->insert_classe();
+		$this->model_races->insert_race();
 		redirect('/races');
     }
     public function drop($id){
