@@ -2,23 +2,22 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Races extends MY_Controller {
-	public function __construct()
-	{
+
+	public function __construct() {
 		parent::__construct();
 		$data['page_title'] = 'races';
 		$this->load->model('model_races');
 
         parent::verificaLogin();
-	}
+    }
 
-	public function index($offset = 0)
-	{
+    public function index($offset = 0) {
         $limit = 20;
-		$data['races'] = $this->model_races->get_races($limit, $offset);
-		$data['sub_title'] = 'Lista de races D&D 3.5';
+        $data['races'] = $this->model_races->get_races($limit, $offset);
+        $data['sub_title'] = 'Lista de races D&D 3.5';
         $data['title'] = 'Raças :: listagem';
-		$data['description'] = 'Aqui você encontra todas as races disponíveis para seu personagem!';
-		$data['img'] = 'races-rpg.jpg';
+        $data['description'] = 'Aqui você encontra todas as races disponíveis para seu personagem!';
+        $data['img'] = 'races-rpg.jpg';
         $data['page'] = 'races/lista';
         //pagination
         $data['current_page'] = (NULL !== $this->uri->segment(3)) ? $this->uri->segment(3)/10 : 1;
@@ -55,19 +54,18 @@ class Races extends MY_Controller {
         
         $data['pagination'] = $this->pagination->create_links();
         $this->load->view('master', $data);
-	}
+    }
 
-	public function create()
-    {
+    public function create() {
         $this->load->helper(array('form'));
         $this->load->library('form_validation');
         $this->load->model('model_classes');
         $data['classes'] = $this->model_classes->get_all_classes();
         $data['title'] = 'Raças :: criar';
-		$data['sub_title'] = 'Crie sua Classe';
-		$data['description'] = 'Mas não seja muito apelão, pois o Mestre não gosta!!!';
-		$data['img'] = 'lordsoffallen-rpg-ps4.jpg';
-		$data['page'] = 'races/lista';
+        $data['sub_title'] = 'Crie sua raça';
+        $data['description'] = 'Mas não seja muito apelão, pois o Mestre não gosta!!!';
+        $data['img'] = 'lordsoffallen-rpg-ps4.jpg';
+        $data['page'] = 'races/lista';
 
         if ($this->form_validation->run() == FALSE) {
             $data['page'] = 'races/create';
@@ -76,43 +74,48 @@ class Races extends MY_Controller {
         }
         $this->load->view('master', $data);
     }
-    public function edit( $id ){
 
+    public function edit( $id ) {
+ 
     	$this->load->helper(array('form'));
         $this->load->library('form_validation');
-		$data['title'] = 'Raça :: editar';
-		$data['description'] = 'Altere os campos necessários para aprimorar esta raça!!!';
-		$this->load->model('model_classes');
+        $data['title'] = 'Raça :: editar';
+        $data['description'] = 'Altere os campos necessários para aprimorar esta raça!!!';
+        $this->load->model('model_classes');
         $data['classes'] = $this->model_classes->get_all_classes();
 
-        $data['race'] = $this->model_races->get_classe_by_id($id);
+        $data['race'] = $this->model_races->get_race_by_id($id);
 
-        if($data['race']){
-	        if ($this->form_validation->run() == FALSE) {
-	            $data['page'] = 'races/create';
+        if ($data['race']) {
+            if ($this->form_validation->run() == FALSE) {
+                $data['page'] = 'races/create';
             } else {
                 $data['page'] = 'races/create/ok';
-	        }
+            }
         } else {
-        	$this->index();
+            $this->index();
         }
+
         $this->load->view('master', $data);
 
     }
-    public function update(){
+
+    public function update() {
         $this->model_races->update_race();
         redirect('/races');
     }
-    public function insert(){
-    	//Model races já é carregado no construtor
-		$this->model_races->insert_race();
-		redirect('/races');
-    }
-    public function drop($id){
-    	if ( isset($id) && !empty($id) ) {
-    		$this->model_races->drop($id);
-    	}
 
-    	redirect('/races');
+    public function insert() {
+        $this->model_races->insert_race();
+        redirect('/races');
+    }
+
+    public function drop($id) {
+
+        if ( isset($id) && !empty($id) ) {
+            $this->model_races->drop($id);
+        }
+
+        redirect('/races');
     }
 }

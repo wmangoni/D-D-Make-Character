@@ -28,7 +28,7 @@ class Model_races extends CI_Model {
         return $query->result();
     }
 
-    public function get_classe_by_id($id) {
+    public function get_race_by_id($id) {
         $this->db->select('*');
         $this->db->where('id',$id);
         return $this->db->get('races')->result();

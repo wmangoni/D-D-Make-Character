@@ -1,136 +1,119 @@
-<?php if (isset($race)) { $race = (object) $race[0]; } ?>
+<?php if (isset($magia)) { $magia = (object) $magia[0]; } ?>
 <div class="col-md-12 painel-create">
-	<form class="form-horizontal col-md-12" action="<?php echo (isset($race)) ? base_url('races/update') : base_url('races/insert') ?>" method="post">
+	<form class="form-horizontal col-md-12" action="<?php echo (isset($magia)) ? base_url('magias/update') : base_url('magias/insert') ?>" method="post">
 		<fieldset>
 
 			<!-- Form Name -->
-			<legend><h2 class="h2"><?php echo (isset($race) && isset($race->nome)) ? $race->nome : 'Nova Raça' ?></h2></legend>
+			<legend><h2 class="h2"><?php echo (isset($magia) && isset($magia->nome)) ? $magia->nome : 'Nova Magia' ?></h2></legend>
 
-			<input type="hidden" name="id" value="<?php echo (isset($race) && isset($race->id)) ? $race->id : '' ?>">
+			<input type="hidden" name="id" value="<?php echo (isset($magia) && isset($magia->id)) ? $magia->id : '' ?>">
 
-			<!-- Text input-->
+			<!-- Number input-->
 			<div class="form-group">
-				<label class="col-md-4 control-label" for="nome">Nome</label>
 				<div class="col-md-4">
-					<input id="nome" name="nome" type="text" placeholder="Nome da Classe" class="form-control input-md" required="" value="<?php echo (isset($race) && isset($race->nome)) ? $race->nome : '' ?>">
-				</div>
-			</div>
-
-
-			<!-- Button Drop Down -->
-			<div class="form-group">
-
-				<div class="col-md-3 col-md-offset-3">
-					<label class="control-label" for="bonus">Bônus</label>
-					<input id="bonus" name="bonus" type="text" placeholder="Bonus de atributo" class="form-control input-md" value="<?php echo (isset($race) && isset($race->bonus)) ? $race->bonus : '' ?>">
+					<label class="control-label" for="nivel">Nível</label>
+					<input id="nivel" name="nivel" type="number" placeholder="Nível da magia" class="form-control input-md" required="" value="<?php echo (isset($magia) && isset($magia->nivel)) ? $magia->nivel : '' ?>">
 				</div>
 
-				<div class="col-md-3">
-					<label class="control-label" for="buttondropdown0">Atributo bônus</label>
-					<div class="input-group">
-						<input class="form-control buttondropdown" id="buttondropdown0" name="atributo_bonus" class="form-control" placeholder="Atributo que receberá o bônus" type="text" value="<?php echo (isset($race) && isset($race->atributo_bonus)) ? $race->atributo_bonus : '' ?>">
-						<div class="input-group-btn">
-							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-								Selecione
-								<span class="caret"></span>
-							</button>
-							<ul class="dropdown-menu pull-right bba_tipo">
-								<li><a href="javascript:void(0)">FOR</a></li>
-								<li><a href="javascript:void(0)">DES</a></li>
-								<li><a href="javascript:void(0)">CON</a></li>
-								<li><a href="javascript:void(0)">INT</a></li>
-								<li><a href="javascript:void(0)">SAB</a></li>
-								<li><a href="javascript:void(0)">CAR</a></li>
-							</ul>
-						</div>
-					</div>
+				<div class="col-md-4">
+					<label class="control-label" for="nome">Nome</label>
+					<input id="nome" name="nome" type="text" placeholder="Nome da Classe" class="form-control input-md" required="" value="<?php echo (isset($magia) && isset($magia->nome)) ? $magia->nome : '' ?>">
+				</div>
+
+				<div class="col-md-4">
+					<label class="control-label" for="descricao">Descrição</label>
+					<input id="descricao" name="descricao" type="text" placeholder="Descrição da magia" class="form-control input-md" required="" value="<?php echo (isset($magia) && isset($magia->descricao)) ? $magia->descricao : '' ?>">
 				</div>
 			</div>
 
 			<!-- Button Drop Down -->
 			<div class="form-group">
-				<div class="col-md-3 col-md-offset-3">
-					<label class="control-label" for="desvantagem">Desvantagem</label>
-					<input id="desvantagem" name="desvantagem" type="text" placeholder="Desvantagem da raça" class="form-control input-md" value="<?php echo (isset($race) && isset($race->desvantagem)) ? $race->desvantagem : '' ?>">
+				<div class="col-md-3" id="componentes">
+
+					<label class="control-label" for="descricao">Componentes <small>(Clique para adicionar ou remover.)</small></label>
+
+					<div class="btn-group btn-group-xs" role="group" aria-label="...">
+						<button v-on:click="addVerbal" type="button" class="btn btn-default">Verbal</button>
+						<button v-on:click="addGestual" type="button" class="btn btn-default">Gestual</button>
+						<button v-on:click="addFoco" type="button" class="btn btn-default">Foco</button>
+
+						<input v-model="componentes" type="text" class="form-control" disabled aria-label="Verbal">
+					</div>
+
 				</div>
 
 				<div class="col-md-3">
-					<label class="control-label" for="buttondropdown">Atributo desvantagem</label>
+					<label class="control-label" for="buttondropdown0">Escola</label>
 					<div class="input-group">
-						<input class="form-control buttondropdown" id="buttondropdown" name="atributo_desvantagem" class="form-control" placeholder="" type="text" value="<?php echo (isset($race) && isset($race->atributo_desvantagem)) ? $race->atributo_desvantagem : '' ?>">
+						<input class="form-control buttondropdown" id="buttondropdown0" name="escola" class="form-control" placeholder="Nome da escola de magia" type="text" value="<?php echo (isset($magia) && isset($magia->escola)) ? $magia->escola : '' ?>">
 						<div class="input-group-btn">
 							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
 								Selecione
 								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu pull-right bba_tipo">
-								<li><a href="javascript:void(0)">FOR</a></li>
-								<li><a href="javascript:void(0)">DES</a></li>
-								<li><a href="javascript:void(0)">CON</a></li>
-								<li><a href="javascript:void(0)">INT</a></li>
-								<li><a href="javascript:void(0)">SAB</a></li>
-								<li><a href="javascript:void(0)">CAR</a></li>
+								<li><a href="javascript:void(0)">ABJURAÇÃO</a></li>
+								<li><a href="javascript:void(0)">ADIVINHAÇÃO</a></li>
+								<li><a href="javascript:void(0)">CONJURAÇÃO</a></li>
+								<li><a href="javascript:void(0)">ENCANTAMENTO</a></li>
+								<li><a href="javascript:void(0)">EVOCAÇÃO</a></li>
+								<li><a href="javascript:void(0)">ILUSÃO</a></li>
+								<li><a href="javascript:void(0)">NECROMANCIA</a></li>
+								<li><a href="javascript:void(0)">TRANSMUTAÇÃO</a></li>
 							</ul>
 						</div>
 					</div>
+				</div>
+
+				<div class="col-md-3">
+					<label class="control-label" for="tempo_execusao">Tempo de excecução</label>
+					<input id="tempo_execusao" name="tempo_execusao" type="text" placeholder="1 A.P." class="form-control input-md" value="<?php echo (isset($magia) && isset($magia->tempo_execusao)) ? $magia->tempo_execusao : '' ?>">
+				</div>
+
+				<div class="col-md-3">
+					<label class="control-label" for="alcance">Alcance</label>
+					<input id="alcance" name="alcance" type="text" placeholder="Curto 7,5m+1,5m/2niv" class="form-control input-md" value="<?php echo (isset($magia) && isset($magia->alcance)) ? $magia->alcance : '' ?>">
 				</div>
 			</div>
 
 			<div class="form-group">
-
-				<div class="col-md-3 col-md-offset-3">
-					<label class="control-label" for="buttondropdown2">Tamanho</label>
-					<div class="input-group">
-						<input class="form-control buttondropdown" id="buttondropdown2" name="tamanho" class="form-control" placeholder="Selecione" type="text" required="" value="<?php echo (isset($race) && isset($race->tamanho)) ? $race->tamanho : '' ?>">
-						<div class="input-group-btn">
-							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-								Selecione
-								<span class="caret"></span>
-							</button>
-							<ul class="dropdown-menu pull-right bba_tipo">
-								<li><a href="javascript:void(0)">Mínimo</a></li>
-								<li><a href="javascript:void(0)">Minúsculo</a></li>
-								<li><a href="javascript:void(0)">Pequeno</a></li>
-								<li><a href="javascript:void(0)">Médio</a></li>
-								<li><a href="javascript:void(0)">Grande</a></li>
-								<li><a href="javascript:void(0)">Enorme</a></li>
-								<li><a href="javascript:void(0)">Imenso</a></li>
-								<li><a href="javascript:void(0)">Colosal</a></li>
-							</ul>
-						</div>
-					</div>
+				<div class="col-md-3">
+					<label class="control-label" for="alvo_efeito_area">Alvo / Efeito / Area</label>
+					<input id="alvo_efeito_area" name="alvo_efeito_area" type="text" placeholder="Obj. até 15kg ou portal" class="form-control input-md" value="<?php echo (isset($magia) && isset($magia->alvo_efeito_area)) ? $magia->alvo_efeito_area : '' ?>">
 				</div>
 
 				<div class="col-md-3">
-					<label class="control-label" for="buttondropdown2">Classe Favorecida</label>
-					<div class="input-group">
-						<input class="form-control buttondropdown" id="buttondropdown2" name="classe_favorecida" class="form-control" placeholder="Selecione" type="text" required="" value="<?php echo (isset($race) && isset($race->classe_favorecida)) ? $race->classe_favorecida : '' ?>">
-						<div class="input-group-btn">
-							<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-								Selecione
-								<span class="caret"></span>
-							</button>
-							<ul class="dropdown-menu pull-right bba_tipo">
-								<?php if(isset($classes)) : ?>
-									<li><a href="javascript:void(0)">Qualquer uma</li>
-									<?php foreach($classes as $key => $class) : ?>
-										<li><a href="javascript:void(0)"><?php echo $class->nome ?></a></li>
-									<?php endforeach; ?>
-								<?php endif; ?>
-							</ul>
-						</div>
-					</div>
+					<label class="control-label" for="duracao">Duração</label>
+					<input id="duracao" name="duracao" type="text" placeholder="Inst." class="form-control input-md" value="<?php echo (isset($magia) && isset($magia->duracao)) ? $magia->duracao : '' ?>">
 				</div>
 
+				<div class="col-md-3">
+					<label class="control-label" for="tr">Teste de resistência</label>
+					<input id="tr" name="tr" type="text" placeholder="Von anula" class="form-control input-md" value="<?php echo (isset($magia) && isset($magia->tr)) ? $magia->tr : '' ?>">
+				</div>
+
+				<div class="col-md-3">
+					<label class="control-label" for="rm">Resistência a magia</label>
+					<input id="rm" name="rm" type="text" placeholder="Sim" class="form-control input-md" value="<?php echo (isset($magia) && isset($magia->rm)) ? $magia->rm : '' ?>">
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-md-12">
+					<label class="control-label" for="material_foco">Material / Foco</label>
+					<input id="material_foco" name="material_foco" type="text" placeholder="Chave de bronze" class="form-control input-md" value="<?php echo (isset($magia) && isset($magia->material_foco)) ? $magia->material_foco : '' ?>">
+				</div>
 			</div>
 
 			<!-- Button -->
 			<div class="form-group">
-				<div class="col-md-3 col-md-offset-3">
-				<label class="control-label" for="submit">Salvar</label>
-					<div class="input-group">
-						<button id="submit" name="submit" class="btn btn-primary"><input type="submit" value="OK"/><i class="glyphicon glyphicon-floppy-open"></i>&nbsp;</button>
-					</div>
+				<div class="col-md-12">
+					<label class="control-label" for="submit">Salvar</label>
+				</div>
+			</div>
+			<div class="row form-group">
+				<div class="col-md-12">
+					<button id="submit" name="submit" class="btn btn-primary"><input type="submit" value="OK"/><i class="glyphicon glyphicon-floppy-open"></i>&nbsp;</button>
 				</div>
 			</div>
 

@@ -11,6 +11,8 @@ $title_page = $_SERVER["REQUEST_URI"];
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
 	<link href='https://fonts.googleapis.com/css?family=Astloch:400,700|Bad+Script|Poiret+One|Lovers+Quarrel|Miss+Fajardose|MedievalSharp' rel='stylesheet' type='text/css'>
 	<link href="<?php echo base_url('assets/css/main.css'); ?>" rel="stylesheet" type="text/css"></link>
+	<!-- development version, includes helpful console warnings -->
+	<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
 <div class="row">

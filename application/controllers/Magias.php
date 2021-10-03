@@ -2,8 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Magias extends MY_Controller {
-	public function __construct()
-	{
+
+	public function __construct() {
 		parent::__construct();
 		$data['page_title'] = 'magias';
 		$this->load->model('model_magias');
@@ -11,8 +11,7 @@ class Magias extends MY_Controller {
         parent::verificaLogin();
 	}
 
-	public function index($offset = 0)
-	{
+	public function index($offset = 0) {
         $limit = 20;
 		$data['models'] = $this->model_magias->get_magias($limit, $offset);
 		$data['sub_title'] = 'Lista de magias D&D 3.5';
@@ -57,14 +56,12 @@ class Magias extends MY_Controller {
         $this->load->view('master', $data);
 	}
 
-	public function create()
-    {
+	public function create() {
         $this->load->helper(array('form'));
         $this->load->library('form_validation');
-        $this->load->model('model_classes');
-        $data['classes'] = $this->model_classes->get_all_classes();
-        $data['title'] = 'Raças :: criar';
-		$data['sub_title'] = 'Crie sua Classe';
+
+        $data['title'] = 'Magias :: criar';
+		$data['sub_title'] = 'Crie sua magia';
 		$data['description'] = 'Mas não seja muito apelão, pois o Mestre não gosta!!!';
 		$data['img'] = 'lordsoffallen-rpg-ps4.jpg';
 		$data['page'] = 'magias/lista';
@@ -76,16 +73,17 @@ class Magias extends MY_Controller {
         }
         $this->load->view('master', $data);
     }
-    public function edit( $id ){
+
+    public function edit( $id ) {
 
     	$this->load->helper(array('form'));
         $this->load->library('form_validation');
 		$data['title'] = 'Magia :: editar';
 		$data['description'] = 'Altere os campos necessários para aprimorar esta raça!!!';
 
-        $data['magia'] = $this->model_magias->get_classe_by_id($id);
+        $data['magia'] = $this->model_magias->get_magia_by_id($id);
 
-        if($data['magia']){
+        if ($data['magia']) {
 	        if ($this->form_validation->run() == FALSE) {
 	            $data['page'] = 'magias/create';
             } else {
@@ -94,19 +92,21 @@ class Magias extends MY_Controller {
         } else {
         	$this->index();
         }
-        $this->load->view('master', $data);
 
+        $this->load->view('master', $data);
     }
-    public function update(){
+
+    public function update() {
         $this->model_magias->update_magia();
         redirect('/magias');
     }
-    public function insert(){
-    	//Model magias já é carregado no construtor
+
+    public function insert() {
 		$this->model_magias->insert_magia();
 		redirect('/magias');
     }
-    public function drop($id){
+
+    public function drop($id) {
     	if ( isset($id) && !empty($id) ) {
     		$this->model_magias->drop($id);
     	}
