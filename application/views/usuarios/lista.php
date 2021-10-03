@@ -16,11 +16,11 @@
       <thead>
         <tr>
           <th class="hidden-xs">ID</th>
-          <th>Nome da Raça</th>
-          <th>Bonus</th>
-          <th>Desvantagem</th>
-          <th>Tamanho</th>
-          <th>Classe Favorecida</th>
+          <th>Nome</th>
+          <th>Email</th>
+          <th>Status</th>
+          <th>Criado em</th>
+          <th>Atualizado em</th>
           <th><a href="#"><em class="fa fa-cog"></em> Settings</a></th>
         </tr>
       </thead>
@@ -30,7 +30,7 @@
             <td class="hidden-xs">{id}</td>
               <td><big data-id="{key}">{nome}</big></td>
               <td>{email}</td>
-              <td>{nasc}</td>
+              <td>{status}</td>
               <td>{created_at}</td>
               <td>{updated_at}</td>
             <td align="center">

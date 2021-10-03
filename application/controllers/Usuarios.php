@@ -2,8 +2,8 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Usuarios extends MY_Controller {
-	public function __construct()
-	{
+
+	public function __construct() {
 		parent::__construct();
 		$data['page_title'] = 'usuarios';
 		$this->load->model('model_usuarios');
@@ -11,8 +11,7 @@ class Usuarios extends MY_Controller {
         parent::verificaLogin();
 	}
 
-	public function index($offset = 0)
-	{
+	public function index($offset = 0) {
         $limit = 20;
 		$data['usuarios'] = $this->model_usuarios->get_usuarios($limit, $offset);
 		$data['sub_title'] = 'Usuários';
@@ -57,16 +56,15 @@ class Usuarios extends MY_Controller {
         $this->parser->parse('master', $data);
 	}
 
-	public function create()
-    {
+	public function create() {
         $this->load->helper(array('form'));
         $this->load->library('form_validation');
         $this->load->model('model_usuarios');
-        $data['classes'] = $this->model_classes->get_all_classes();
-        $data['title'] = 'Raças :: criar';
-		$data['sub_title'] = 'Crie sua Classe';
-		$data['description'] = 'Mas não seja muito apelão, pois o Mestre não gosta!!!';
-		$data['img'] = 'lordsoffallen-rpg-ps4.jpg';
+
+        $data['title'] = 'Usuários :: criar';
+		$data['sub_title'] = 'Crie um usuário';
+		$data['description'] = 'Aqui você encontra todos os usuários do sistema';
+		$data['img'] = 'classes-rpg.jpg';
 		$data['page'] = 'usuarios/lista';
 
         if ($this->form_validation->run() == FALSE) {
@@ -76,18 +74,23 @@ class Usuarios extends MY_Controller {
         }
         $this->parser->parse('master', $data);
     }
-    public function edit( $id ){
+
+    public function edit( $id ) {
 
     	$this->load->helper(array('form'));
         $this->load->library('form_validation');
-		$data['title'] = 'Raça :: editar';
-		$data['description'] = 'Altere os campos necessários para aprimorar esta raça!!!';
+
+		$data['title'] = 'Usuários :: editar';
+		$data['description'] = 'Altere os campos necessários do usuário';
+
 		$this->load->model('model_usuarios');
-        $data['classes'] = $this->model_classes->get_all_classes();
+        $data['usuario'] = $this->model_usuarios->get_usuario_by_id($id);
 
-        $data['usuarios'] = $this->model_usuarios->get_usuario_by_id($id);
 
-        if($data['usuarios']){
+        if ($data['usuario']) {
+
+            $data['usuario'][0]->status = $this->get_status_by_id($data['usuario'][0]->status);
+
 	        if ($this->form_validation->run() == FALSE) {
 	            $data['page'] = 'usuarios/create';
             } else {
@@ -99,20 +102,26 @@ class Usuarios extends MY_Controller {
         $this->parser->parse('master', $data);
 
     }
-    public function update(){
-        $this->model_usuarios->update_usuarios();
+
+    public function update() {
+        $this->model_usuarios->update_usuario();
         redirect('/usuarios');
     }
-    public function insert(){
-    	//Model usuarios já é carregado no construtor
-		$this->model_usuarios->insert_classe();
+
+    public function insert() {
+		$this->model_usuarios->insert_usuario();
 		redirect('/usuarios');
     }
-    public function drop($id){
+
+    public function drop($id) {
     	if ( isset($id) && !empty($id) ) {
     		$this->model_usuarios->drop($id);
     	}
 
     	redirect('/usuarios');
+    }
+
+    private function get_status_by_id($status) {
+        return $status == 1 ? "Ativo" : "Inativo";
     }
 }

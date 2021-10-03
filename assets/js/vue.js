@@ -27,6 +27,12 @@ var app = new Vue({
     },
     addFoco: function () {
     	this.addComponent("F");
-    }
+    },
+    addMaterial: function () {
+    	this.addComponent("M");
+    },
+    addFocoDivino: function () {
+    	this.addComponent("FD");
+    },
   }
 });

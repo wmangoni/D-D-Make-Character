@@ -36,8 +36,10 @@
 						<button v-on:click="addVerbal" type="button" class="btn btn-default">Verbal</button>
 						<button v-on:click="addGestual" type="button" class="btn btn-default">Gestual</button>
 						<button v-on:click="addFoco" type="button" class="btn btn-default">Foco</button>
+						<button v-on:click="addMaterial" type="button" class="btn btn-default">Material</button>
+						<button v-on:click="addFocoDivino" type="button" class="btn btn-default">Foco Divino</button>
 
-						<input v-model="componentes" type="text" class="form-control" disabled aria-label="Verbal">
+						<input v-model="componentes" type="text" class="form-control" disabled aria-label="componentes">
 					</div>
 
 				</div>
